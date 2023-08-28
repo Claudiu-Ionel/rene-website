@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-backgroundColor p-10">
         <Nav />
-        {children}
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

@@ -2,25 +2,83 @@ export const experienceTimeline = [
   {
     year: "2022",
     projects: [
-      {
-        projectName: "Vestas",
-      },
-      {
-        projectName: "B2 Energy stills and commercial",
-      },
-      {
-        projectName: "Speaker i kampagne for Samsø kommune",
-      },
-      {
-        projectName: "HK reklame",
-      },
+      "Vestas",
+      "B2 Energy stills and commercial",
+      "Speaker i kampagne for Samsø kommune",
+      "HK reklame",
     ],
   },
-  { year: "2021", projects: "3" },
-  { year: "2020", projects: "3" },
-  { year: "2019", projects: "3" },
-  { year: "2018", projects: "3" },
-  { year: "2016", projects: "3" },
+  {
+    year: "2021",
+    projects: [
+      "Dubbing for en rekrutterings kampagne for Forsvaret",
+      `Kræftens Bekæmpelse "Røgfri Danmark"`,
+      "Telia Christmas",
+      `Medvirkende som "Per Wennick" i dokumentaren "Om Per Wennick"`,
+      "Faxe Kondi commercial",
+      "EPOS commercial",
+      "Simple Fest commercial",
+      "Akademikernes A Kasse Stils",
+      "Borgen 4 som finansminister",
+      "Kohberg commercial",
+    ],
+  },
+  {
+    year: "2020",
+    projects: [
+      "Mond of Copenhagen stills (Nordic Wedding Shoot)",
+      "Rubber Duck stills",
+      "Milestone stills 2020",
+      "Kamikaze (HBO)",
+      "Search Royals commercial (Tysktalende)",
+      "Brødrene Dahl",
+      "Velux commercial and stills",
+      "Stressless commercial and stills",
+    ],
+  },
+  {
+    year: "2019",
+    projects: [
+      `Statistrolle som Christian d. 9 på DRs "Grænseland"`,
+      "FDM stills",
+      `“Lederne”commercial Børsen`,
+      "Neutral comercial and stills",
+      "Bruun Rasmussen auktioner commercial",
+      "Danske Bank App commercial",
+      `Tivoli "Grin lidt mere" commercial`,
+      "LEGO City comercial",
+      "Renault stills",
+      `Børsen “Ansvar kræver indsigt" commercial`,
+      "Lego Mustang stills",
+    ],
+  },
+  {
+    year: "2018",
+    projects: [
+      "Commercial for Lidl",
+      "Gentlemann Jack",
+      "DOT commercial and stills",
+      "Grundfoss stills",
+      "Georg Jensen Christmas commercial",
+      "Copenhagen Airport Stills",
+      "FynBus commercial",
+      "LendMe commercial",
+      "Knæk Cancer",
+      "Krifa commercial and stills",
+      "Bedrag, sæson III",
+      "Arla Øko comercial",
+      "Nykredit (Hovedperson)",
+      `Reklameteaser med en "Fremmed Flytter ind" som Kasper 2. vinder af Silver statue ved Entertainment Awards i Hollywood 2018`,
+    ],
+  },
+  {
+    year: "2016",
+    projects: [
+      "Cabinn Hotels",
+      "Krifa Antistress commercial",
+      "Lyngby Storcenter commercial",
+    ],
+  },
 ];
 
 export const socials = [

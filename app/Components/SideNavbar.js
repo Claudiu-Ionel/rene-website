@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
-export default function nav({}) {
+export default function SideNavbar({}) {
   const links = [
     { name: "Gallery", href: "/Gallery" },
     { name: "Showreel", href: "/Showreel" },
@@ -22,11 +22,8 @@ export default function nav({}) {
 
   return (
     <nav
-      className={`hidden md:flex justify-between px-10 overflow-hidden font-secondary relative z-10 top-0 `}
+      className={`w-nav justify-between px-8 py-6 overflow-hidden font-secondary ${position} z-10 top-${top} ${breakpointValue}`}
     >
-      <div className="text-backgroundColor px-5 py-2">
-        <h1 className="text-2xl font-primary">Julius Rene</h1>
-      </div>
       <ul
         onMouseLeave={() => {
           setHover(false);

@@ -17,7 +17,9 @@ module.exports = {
         primary: ["Libre Bodoni", "serif"],
         secondary: ["Nanum Gothic", "sans-serif"],
       },
-      nav: "calc(100% - 60px)",
+      width: {
+        nav: "calc(100% - 80px)",
+      },
       backgroundImage: {
         "hero-image": "url(/Julius.jpg)",
       },

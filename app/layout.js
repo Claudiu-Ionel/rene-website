@@ -10,8 +10,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-backgroundColor p-10 relative">
-        <Nav />
+      <body className="">
+        <Nav
+          position="relative"
+          top="0"
+          breakpoint="tablet"
+          breakpointValue="flex"
+          display="hidden"
+        />
         <main>{children}</main>
         <Footer />
       </body>

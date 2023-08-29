@@ -12,6 +12,9 @@ module.exports = {
       footerColor: "#3a3a3a",
       white: "#FFF",
     },
+    screens: {
+      tablet: "768px",
+    },
     extend: {
       fontFamily: {
         primary: ["Libre Bodoni", "serif"],

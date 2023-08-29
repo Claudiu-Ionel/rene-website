@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,7 +12,16 @@ module.exports = {
       footerColor: "#3a3a3a",
       white: "#FFF",
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        primary: ["Libre Bodoni", "serif"],
+        secondary: ["Nanum Gothic", "sans-serif"],
+      },
+      nav: "calc(100% - 60px)",
+      backgroundImage: {
+        "hero-image": "url(/Julius.jpg)",
+      },
+    },
   },
   plugins: [],
 };

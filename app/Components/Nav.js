@@ -1,22 +1,59 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 
 export default function nav() {
+  const links = [
+    { name: "Gallery", href: "/Gallery" },
+    { name: "Showreel", href: "/Showreel" },
+    { name: "Contact", href: "/Contact" },
+  ];
+
+  const [hover, setHover] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState(null);
+
+  // hover effect for links
+  function hoverEffect(link) {
+    if (!hover) {
+      return "opacity-100";
+    }
+    return hoveredLink === link.name && hover ? "" : "opacity-30";
+  }
+
   return (
-    <nav className="min-w-screen flex justify-between">
+    <nav className="bg-white min-w-screen flex justify-between">
       <div className="px-5 py-2">
         <h1 className="text-4xl">Julius Rene</h1>
         <h3>Actor & Instrumentalist</h3>
       </div>
-      <ul className="flex flex-row justify-end space-x-5 items-center">
-        <li className="flex align-middle">
-          <Link href="/Gallery">Gallery</Link>
-        </li>
-        <li className="flex align-middle">
-          <Link href="/Showreel">Showreel</Link>
-        </li>
-        <li className="flex align-middle">
-          <Link href="/Contact">Contact</Link>
-        </li>
+      <ul
+        onMouseLeave={() => {
+          setHover(false);
+          console.log("left ul");
+        }}
+        className={`flex flex-row justify-end space-x-5 items-center 
+        ${!hover ? "opacity-100" : ""}`}
+      >
+        {links.map((link) => {
+          return (
+            <li key={link.name} className="flex align-middle">
+              <Link
+                className={`${hoverEffect(link)} transition duration-200`}
+                onMouseEnter={() => {
+                  setHover(true);
+                  setHoveredLink(link.name);
+                }}
+                onMouseLeave={() => {
+                  setHoveredLink(null);
+                }}
+                href={link.href}
+              >
+                {link.name}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );

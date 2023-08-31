@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
-export default function SideNavbar({}) {
+export default function SideNavbar({ sidebarOpen, setSidebarOpen }) {
   const links = [
     { name: "Gallery", href: "/Gallery" },
     { name: "Showreel", href: "/Showreel" },
@@ -22,13 +22,15 @@ export default function SideNavbar({}) {
 
   return (
     <nav
-      className={`w-nav justify-between px-8 py-6 overflow-hidden font-secondary ${position} z-10 top-${top} ${breakpointValue}`}
+      className={`${sidebarOpen ? "w-full p-9" : "w-0 p-0"}
+      h-screen flex justify-start bg-white  overflow-hidden font-secondary absolute z-40 transition-[width] duration-200 `}
     >
       <ul
         onMouseLeave={() => {
           setHover(false);
         }}
-        className={`flex flex-row justify-end space-x-5 items-center
+        className={`flex flex-col space-y-3
+        ${sidebarOpen ? "visible" : "hidden"}
         ${!hover ? "opacity-100" : ""}`}
       >
         {links.map((link) => {
@@ -51,6 +53,14 @@ export default function SideNavbar({}) {
           );
         })}
       </ul>
+      <button
+        onClick={() => setSidebarOpen(false)}
+        className={`p-6 h-fit absolute right-0 top-0 transition-all
+        ${sidebarOpen ? "visible" : "hidden"}
+      `}
+      >
+        X
+      </button>
     </nav>
   );
 }

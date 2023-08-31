@@ -23,7 +23,7 @@ export default function SideNavbar({ sidebarOpen, setSidebarOpen }) {
   return (
     <nav
       className={`${sidebarOpen ? "w-full p-9" : "w-0 p-0"}
-      h-screen flex justify-start bg-white  overflow-hidden font-secondary absolute z-40 transition-[width] duration-200 `}
+      h-screen flex justify-start bg-white  overflow-hidden font-secondary absolute z-40 transition-[width] duration-500 `}
     >
       <ul
         onMouseLeave={() => {
@@ -37,6 +37,9 @@ export default function SideNavbar({ sidebarOpen, setSidebarOpen }) {
           return (
             <li key={link.name} className="flex align-middle">
               <Link
+                onClick={() => {
+                  setSidebarOpen(false);
+                }}
                 className={`${hoverEffect(link)} transition duration-200`}
                 onMouseEnter={() => {
                   setHover(true);

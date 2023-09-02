@@ -85,5 +85,11 @@ export const socials = [
   {
     link: "https://www.instagram.com/juliusreneleo/",
     icon: "/socials/instagram_icon.png",
+    alt: "White Instagram logotype with translucent background",
+  },
+  {
+    link: "https://www.facebook.com/julius.r.leo",
+    icon: "/socials/facebook_icon.png",
+    alt: "White Facebook logotype with translucent background",
   },
 ];

@@ -89,6 +89,7 @@ export default function nav({ setSidebarOpen, sidebarOpen }) {
               </li>
             );
           })}
+          <button>English</button>
         </ul>
       </nav>
     );

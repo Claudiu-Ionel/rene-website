@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
         {/* <SideNavbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} /> */}
 
         <Nav sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-        <main className="bg-backgroundColor p-10 relative flex min-h-screen h-4/5 flex-col items-center justify-between">
+        <main className="bg-backgroundColor p-10 relative flex min-h-screen h-4/5 flex-col items-center justify-between sm:p-6">
           {children}
         </main>
         <Footer />

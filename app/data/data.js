@@ -93,3 +93,13 @@ export const socials = [
     alt: "White Facebook logotype with translucent background",
   },
 ];
+
+export const galleryImages = [
+  { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
+  { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
+  { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
+  { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
+  { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
+  { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
+  { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
+];

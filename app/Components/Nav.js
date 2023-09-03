@@ -40,12 +40,16 @@ export default function nav({ setSidebarOpen, sidebarOpen }) {
 
         <ul
           className={`menu-items bg-white flex flex-col items-start list-none p-9 m-0 w-full h-screen  absolute top-[100%] left-0  origin-left transition-all duration-300 
-        ${sidebarOpen ? "opacity-100 scale-x-100" : " opacity-0 scale-x-0"}`}
+        ${
+          sidebarOpen ? "opacity-100 scale-x-100" : " opacity-0 scale-x-0"
+        } space-y-5`}
         >
           {links.map((link) => {
             return (
               <li key={link.name} className="flex align-middle">
-                <Link href={link.href}>{link.name}</Link>
+                <Link onClick={() => setSidebarOpen(false)} href={link.href}>
+                  {link.name}
+                </Link>
               </li>
             );
           })}

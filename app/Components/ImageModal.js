@@ -22,7 +22,7 @@ export default function ImageModal({ imageModalOpen, setImageModalOpen }) {
             setImageModalOpen(false);
           }, 100);
         }}
-        className={`p-6 h-fit absolute right-0 top-0 transition-all text-white
+        className={`p-6 h-fit absolute right-0 top-0 transition-all text-white z-[1001]
       `}
       >
         X

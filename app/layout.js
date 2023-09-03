@@ -10,6 +10,7 @@ import Nav from "./Components/Nav.js";
 
 export default function RootLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [englishVersion, setEnglishVersion] = useState(false);
   return (
     <html lang="en">
       <body

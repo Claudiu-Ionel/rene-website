@@ -1,12 +1,16 @@
-import { galleryImages } from "../data/data";
 import Image from "next/image";
 
-export default function Gallery({ setModalOpen, setImgIdx }) {
+export default function Gallery({
+  setModalOpen,
+  setImgIdx,
+  galleryImages,
+  limit,
+  setModalImageGallery,
+}) {
   function openModal(imgIdx) {
     setImgIdx(imgIdx);
     setModalOpen(true);
   }
-  const limit = 6;
   return (
     <section
       id="gallery-section"
@@ -20,8 +24,9 @@ export default function Gallery({ setModalOpen, setImgIdx }) {
                 onClick={() => {
                   setImgIdx(idx);
                   setModalOpen(true);
+                  setModalImageGallery(galleryImages);
                 }}
-                className="object-contain cursor-pointer"
+                className="object-contain cursor-pointer md:object-cover"
                 src={item.imageUrl}
                 alt={item.alt}
                 loading="lazy"

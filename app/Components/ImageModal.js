@@ -1,16 +1,19 @@
 "use client";
-import { galleryImages } from "../data/data";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-export default function ImageModal({ imageIdx, setImageModalOpen }) {
+export default function ImageModal({
+  imageIdx,
+  setImageModalOpen,
+  modalImageGallery,
+}) {
   const [fadeIn, setFadeIn] = useState(false);
   const [currentImgIdx, setCurrentImgIdx] = useState(imageIdx);
   const [imageLoaded, setImageLoaded] = useState(false);
   console.log(imageLoaded);
   function nextImage(idx) {
     setImageLoaded(false);
-    if (idx >= galleryImages.length - 1) {
+    if (idx >= modalImageGallery.length - 1) {
       return setCurrentImgIdx(0);
     }
     return setCurrentImgIdx((prev) => prev + 1);
@@ -18,7 +21,7 @@ export default function ImageModal({ imageIdx, setImageModalOpen }) {
   function prevImage(idx) {
     setImageLoaded(false);
     if (idx === 0) {
-      return setCurrentImgIdx(galleryImages.length - 1);
+      return setCurrentImgIdx(modalImageGallery.length - 1);
     }
     return setCurrentImgIdx((prev) => prev - 1);
   }
@@ -66,9 +69,9 @@ export default function ImageModal({ imageIdx, setImageModalOpen }) {
       <div className="carusel w-[100%] max-w-[700px] h-[90%] max-h-[90%] relative">
         <Image
           className={`object-contain transition-opacity  ${
-            imageLoaded ? "opacity-100" : "opacity-50"
+            imageLoaded ? "opacity-100" : "opacity-90"
           }`}
-          src={galleryImages[currentImgIdx]?.imageUrl}
+          src={modalImageGallery[currentImgIdx]?.imageUrl}
           alt="alt"
           loading="lazy"
           fill={true}

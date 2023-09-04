@@ -1,7 +1,11 @@
 import { galleryImages } from "../data/data";
 import Image from "next/image";
 
-export default function Gallery({ setModalOpen }) {
+export default function Gallery({ setModalOpen, setImgIdx }) {
+  function openModal(imgIdx) {
+    setImgIdx(imgIdx);
+    setModalOpen(true);
+  }
   const limit = 6;
   return (
     <section
@@ -13,7 +17,10 @@ export default function Gallery({ setModalOpen }) {
           idx < limit && (
             <div key={idx} className="w-[100%] relative">
               <Image
-                onClick={() => setModalOpen(true)}
+                onClick={() => {
+                  setImgIdx(idx);
+                  setModalOpen(true);
+                }}
                 className="object-contain cursor-pointer"
                 src={item.imageUrl}
                 alt={item.alt}

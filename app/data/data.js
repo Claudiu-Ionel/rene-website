@@ -96,8 +96,8 @@ export const socials = [
 
 export const galleryImages = [
   { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
-  { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
-  { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
+  { imageUrl: "/athletes.webp", alt: "Image of Rene" },
+  { imageUrl: "/reasons-image.webp", alt: "Image of Rene" },
   { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
   { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
   { imageUrl: "/Julius.jpg", alt: "Image of Rene" },

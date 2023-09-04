@@ -9,17 +9,14 @@ export const metadata = {
 };
 export default function Home() {
   const [imageModalOpen, setImageModalOpen] = useState(false);
-
+  const [imageIdx, setImgIdx] = useState(0);
   return (
     <>
       {imageModalOpen && (
-        <ImageModal
-          imageModalOpen={imageModalOpen}
-          setImageModalOpen={setImageModalOpen}
-        />
+        <ImageModal imageIdx={imageIdx} setImageModalOpen={setImageModalOpen} />
       )}
       <section className="bg-hero-image w-full h-[905px] bg-cover bg-no-repeat bg-fixed bg-top"></section>
-      <Gallery setModalOpen={setImageModalOpen} />
+      <Gallery setModalOpen={setImageModalOpen} setImgIdx={setImgIdx} />
       <Experience />
     </>
   );

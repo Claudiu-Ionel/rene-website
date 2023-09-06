@@ -21,7 +21,7 @@ export default function Showreel() {
             Here is my Showreel
           </h1>
           <h3 className="text-sm mt-2 text-center font-semibold">
-            Commercials I've been into..
+            Commercials I&#39;ve been into..
           </h3>
         </div>
         <div className="videos w-full flex justify-start md:flex-col gap-x-5 gap-y-6 px-6 py-12 md:px-0 ">
@@ -30,21 +30,21 @@ export default function Showreel() {
             src="https://www.youtube.com/embed/s2QOeyjbkLs"
             title="YouTube video player"
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
           <iframe
             className="w-[380px] h-[250px] md:w-full md:h-[400px] sm:h-[115px] sm:w-[100%]"
             src="https://www.youtube.com/embed/s2QOeyjbkLs"
             title="YouTube video player"
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
           <iframe
             className="w-[380px] h-[250px] md:w-full md:h-[400px] sm:h-[115px]"
             src="https://www.youtube.com/embed/s2QOeyjbkLs"
             title="YouTube video player"
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
       </div>

@@ -70,8 +70,8 @@ export default function PageCV() {
                 {year}
               </h3>
               <div className="w-[80%] font-secondary [&>p]:mb-2 [&>p]:text-xl ">
-                {projects.map((project) => (
-                  <p>{project}</p>
+                {projects.map((project, idx) => (
+                  <p key={idx}>{project}</p>
                 ))}
               </div>
             </div>

@@ -17,6 +17,7 @@ export default function RootLayout({ children }) {
         className={`relative ${
           sidebarOpen ? "overflow-y-hidden" : "overflow-y-scroll"
         }`}
+        suppressHydrationWarning={true}
       >
         {/* <SideNavbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} /> */}
 

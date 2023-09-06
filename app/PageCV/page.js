@@ -64,8 +64,8 @@ export default function PageCV() {
         {/* The projects timeline: */}
 
         <section className="w-[60%] lg:w-[90%]">
-          {experienceTimeline.map(({ year, projects }) => (
-            <div className="w-full flex mb-10 lg:flex-col">
+          {experienceTimeline.map(({ year, projects }, idx) => (
+            <div key={idx} className="w-full flex mb-10 lg:flex-col">
               <h3 className="text-2xl w-[20%] font-secondary md:mb-4">
                 {year}
               </h3>

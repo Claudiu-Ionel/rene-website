@@ -6,7 +6,7 @@ function HamburgerMenu({ setSidebarOpen, sidebarOpen }) {
   return (
     <div
       id="hamburger-menu"
-      className={`flex items-start relative w-fit h-[55px] bg-white px-3 py-2 relative cursor-pointer ${
+      className={`flex items-start relative w-fit h-[55px] bg-white px-3 py-2 relative cursor-pointer sm:px-0 ${
         sidebarOpen ? "open" : ""
       }`}
     >

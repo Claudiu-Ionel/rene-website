@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import HamburgerMenu from "./HamburgerMenu";
 import useMediaQuery from "../utils/useMediaQueries";
-export default function nav({ setSidebarOpen, sidebarOpen }) {
+
+export default function Nav({ setSidebarOpen, sidebarOpen }) {
   const breakPoint = useMediaQuery(768);
 
   // Nav links for EN and DA languages:

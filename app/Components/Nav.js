@@ -7,6 +7,7 @@ import useMediaQuery from "../utils/useMediaQueries";
 export default function nav({ setSidebarOpen, sidebarOpen }) {
   const breakPoint = useMediaQuery(768);
   const links = [
+    { name: "CV og Info", href: "/PageCV" },
     { name: "Gallery", href: "/Gallery" },
     { name: "Showreel", href: "/Showreel" },
     { name: "Contact", href: "/Contact" },

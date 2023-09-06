@@ -15,7 +15,7 @@ export default function Showreel() {
         />
       )}
       <div className="w-full bg-white px-8 py-6 h-fit flex flex-col sm:px-4">
-        <div className="w-full bg-white px-8 py-6 md:hidden"></div>
+        <div className="w-full bg-white px-8 py-6 h-[128px] md:hidden"></div>
         <div className="title flex flex-col justify-center h-fit w-full py-12 px-6">
           <h1 className="text-3xl mb-4 text-center font-bold">
             Here is my Showreel

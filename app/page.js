@@ -3,11 +3,6 @@ import { useState } from "react";
 import Experience from "./Components/Experience";
 import Gallery from "./Components/Gallery";
 import ImageModal from "./Components/ImageModal";
-import { galleryImages } from "./data/data";
-export const metadata = {
-  title: "Rene",
-  description: "Test test test",
-};
 export default function Home() {
   const [imageModalOpen, setImageModalOpen] = useState(false);
   const [imageIdx, setImgIdx] = useState(0);

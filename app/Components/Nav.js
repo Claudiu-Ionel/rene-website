@@ -1,19 +1,39 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import HamburgerMenu from "./HamburgerMenu";
 import useMediaQuery from "../utils/useMediaQueries";
 export default function nav({ setSidebarOpen, sidebarOpen }) {
   const breakPoint = useMediaQuery(768);
-  const links = [
+
+  // Nav links for EN and DA languages:
+  const linksDa = [
+    { name: "Galleri", href: "/Gallery" },
+    { name: "Showreel", href: "/Showreel" },
+    { name: "Kontakt", href: "/Contact" },
     { name: "CV og Info", href: "/PageCV" },
+  ];
+  const linksEn = [
     { name: "Gallery", href: "/Gallery" },
     { name: "Showreel", href: "/Showreel" },
     { name: "Contact", href: "/Contact" },
+    { name: "CV and Info", href: "/PageCV" },
   ];
+
   const [hover, setHover] = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
+
+  // Change language functionality:
+  const [danish, setDanish] = useState(false);
+  function changeLang() {
+    setDanish(!danish);
+  }
+  useEffect(() => {
+    changeLang();
+  }, []);
+
+  const linksToRender = danish ? linksDa : linksEn;
 
   // hover effect for links
   function hoverEffect(link) {
@@ -40,12 +60,12 @@ export default function nav({ setSidebarOpen, sidebarOpen }) {
         />
 
         <ul
-          className={`menu-items bg-white flex flex-col items-start list-none p-9 m-0 w-full h-screen  absolute top-[100%] left-0  origin-left transition-all duration-300 
+          className={`menu-items bg-white flex flex-col items-start list-none p-9 m-0 w-full h-screen  absolute top-[100%] left-0  origin-left transition-all duration-300
         ${
           sidebarOpen ? "opacity-100 scale-x-100" : " opacity-0 scale-x-0"
         } space-y-5`}
         >
-          {links.map((link) => {
+          {linksToRender.map((link) => {
             return (
               <li key={link.name} className="flex align-middle">
                 <Link onClick={() => setSidebarOpen(false)} href={link.href}>
@@ -55,7 +75,7 @@ export default function nav({ setSidebarOpen, sidebarOpen }) {
             );
           })}
           <li className="flex align-middle">
-            <button>English</button>
+            <button onClick={changeLang}>{danish ? "English" : "Dansk"}</button>
           </li>
         </ul>
       </nav>
@@ -79,7 +99,7 @@ export default function nav({ setSidebarOpen, sidebarOpen }) {
           className={`flex flex-row justify-end space-x-5 items-center
         ${!hover ? "opacity-100" : ""}`}
         >
-          {links.map((link) => {
+          {linksToRender.map((link) => {
             return (
               <li key={link.name} className="flex align-middle">
                 <Link
@@ -98,7 +118,9 @@ export default function nav({ setSidebarOpen, sidebarOpen }) {
               </li>
             );
           })}
-          <button>English</button>
+          <li className="flex align-middle">
+            <button onClick={changeLang}>{danish ? "English" : "Dansk"}</button>
+          </li>
         </ul>
       </nav>
     );

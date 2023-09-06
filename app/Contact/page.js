@@ -3,7 +3,7 @@ export default function Contact() {
     <div className="w-full bg-white flex flex-col items-center">
       <div className="w-full bg-white px-8 py-6 h-[128px] md:hidden"></div>
       <h2 className="w-1/3 font-primary text-3xl my-10">Contact me:</h2>
-      <form className="w-1/3 flex flex-col items-center [&>label]:w-full [&>label]:font-secondary [&>input]:w-full [&>input]:bg-backgroundColor/25 [&>input]:rounded-md [&>input]:p-2 [&>input]:mb-4 [&>input]:font-secondary">
+      <form className="w-1/3 md:w-full md:px-5 flex flex-col items-center [&>label]:w-full [&>label]:font-secondary [&>input]:w-full [&>input]:bg-backgroundColor/25 [&>input]:rounded-md [&>input]:p-2 [&>input]:mb-4 [&>input]:font-secondary">
         <label for="userName">Name:</label>
         <input type="text" name="userName" required></input>
 

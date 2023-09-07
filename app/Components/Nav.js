@@ -8,6 +8,7 @@ import { AppContext } from "../layout";
 
 export default function Nav({ setSidebarOpen, sidebarOpen }) {
   const { englishVersion, setEnglishVersion } = useContext(AppContext);
+  console.log(englishVersion);
   const breakPoint = useMediaQuery(768);
   // Nav links for EN and DA languages:
   const linksDa = [
@@ -30,12 +31,8 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
   function changeLang() {
     setDanish(!danish);
   }
-  useEffect(() => {
-    changeLang();
-    setEnglishVersion();
-  }, []);
 
-  const linksToRender = englishVersion ? linksDa : linksEn;
+  const linksToRender = !englishVersion ? linksDa : linksEn;
 
   const [hover, setHover] = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
@@ -98,7 +95,7 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
             <Link href="/">Julius Rene</Link>
           </h1>
           <h3>
-            {!englishVersion
+            {englishVersion
               ? "Actor & Instrumentalist"
               : "Skuespiller og instrumentalist"}
           </h3>
@@ -131,7 +128,7 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
           })}
           <li className="flex align-middle">
             <button onClick={() => setEnglishVersion(!englishVersion)}>
-              {englishVersion ? "English" : "Dansk"}
+              {!englishVersion ? "English" : "Dansk"}
             </button>
           </li>
         </ul>

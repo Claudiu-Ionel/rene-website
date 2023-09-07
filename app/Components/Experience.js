@@ -17,7 +17,9 @@ export default function Experience() {
       {/* Autobiography text section: */}
 
       <section className="w-[60%] lg:w-[90%] mb-10 font-secondary">
-        <div className={"[&>p]:mb-2" + (englishVersion ? " block" : " hidden")}>
+        <div
+          className={"[&>p]:mb-2" + (!englishVersion ? " block" : " hidden")}
+        >
           <p>
             Julius René er en skuespiller med stor erfaring inden for reklamer,
             film-produktioner og også flere dokumentarfilm-opgaver i Danmark.
@@ -36,7 +38,9 @@ export default function Experience() {
             Meisner og Method acting.
           </p>
         </div>
-        <div className={"[&>p]:mb-2" + (englishVersion ? " hidden" : " block")}>
+        <div
+          className={"[&>p]:mb-2" + (!englishVersion ? " hidden" : " block")}
+        >
           <p>
             Julius René is an actor with extensive experience in commercials,
             film productions and also several documentary projects in Denmark.

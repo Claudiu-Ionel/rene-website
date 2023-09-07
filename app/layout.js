@@ -12,7 +12,7 @@ export const AppContext = createContext({});
 
 export default function RootLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [englishVersion, setEnglishVersion] = useState(true);
+  const [englishVersion, setEnglishVersion] = useState(false);
 
   return (
     <html lang="en">

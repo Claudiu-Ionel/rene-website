@@ -30,7 +30,10 @@ export default function Showreel() {
         <div className="videos w-full flex justify-start md:flex-col gap-x-5 gap-y-6 px-6 py-12 md:px-0 ">
           {videos.map((item, idx) => {
             return (
-              <div className="w-[33%] max-w-[450px] h-[250px] md:w-full md:h-[400px] sm:h-[150px] relative">
+              <div
+                key={idx}
+                className="w-[33%] max-w-[450px] h-[250px] md:w-full md:h-[400px] sm:h-[150px] relative"
+              >
                 <iframe
                   key={idx}
                   src={item.videoUrl}

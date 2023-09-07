@@ -1,12 +1,13 @@
 "use client";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import ImageModal from "../Components/ImageModal";
 import { videos } from "../data/data";
-import { Container } from "postcss";
+import { AppContext } from "../layout";
 export default function Showreel() {
   const [imageModalOpen, setImageModalOpen] = useState(false);
   const [imageIdx, setImgIdx] = useState(0);
   const [modalImageGallery, setModalImageGallery] = useState(videos);
+  const { englishVersion } = useContext(AppContext);
   return (
     <>
       {imageModalOpen && (
@@ -21,10 +22,12 @@ export default function Showreel() {
         <div className="w-full bg-white px-8 py-6 h-[128px] md:hidden"></div>
         <div className="title flex flex-col justify-center h-fit w-full py-12 px-6">
           <h1 className="text-3xl mb-4 text-center font-bold">
-            Here is my Showreel
+            {englishVersion ? "Here is my Showreel" : "Her er mit Showreel"}
           </h1>
           <h3 className="text-sm mt-2 text-center font-semibold">
-            Commercials I&#39;ve been into..
+            {englishVersion
+              ? `Commercials I have been into..`
+              : "Reklamer jeg har været til.."}
           </h3>
         </div>
         <div className="videos w-full flex justify-start md:flex-col gap-x-5 gap-y-6 px-6 py-12 md:px-0 ">

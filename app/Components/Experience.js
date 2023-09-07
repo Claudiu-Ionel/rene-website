@@ -11,7 +11,7 @@ export default function Experience() {
   return (
     <article className="w-full bg-white flex flex-col items-center">
       <h2 className="font-primary text-3xl my-10">
-        {englishVersion ? "Erfaring" : "Experience"}
+        {!englishVersion ? "Erfaring" : "Experience"}
       </h2>
 
       {/* Autobiography text section: */}

@@ -12,7 +12,7 @@ export default function Contact() {
         {englishVersion ? "Contact me:" : "Kontakt mig:"}
       </h2>
       <form className="w-1/3 md:w-full md:px-5 flex flex-col items-center [&>label]:w-full [&>label]:font-secondary [&>input]:w-full [&>input]:bg-backgroundColor/25 [&>input]:rounded-md [&>input]:p-2 [&>input]:mb-4 [&>input]:font-secondary">
-        <label for="userName">{!englishVersion ? "Name" : "Navn:"}</label>
+        <label for="userName">{englishVersion ? "Name" : "Navn:"}</label>
         <input type="text" name="userName" required></input>
 
         <label for="userEmail" required>

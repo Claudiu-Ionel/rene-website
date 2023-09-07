@@ -19,18 +19,20 @@ export default function Gallery({
       {galleryImages.map((item, idx) => {
         return (
           idx < limit && (
-            <div key={idx} className="w-[100%] relative">
+            <div key={idx} className="w-full relative">
               <Image
                 onClick={() => {
                   setImgIdx(idx);
                   setModalOpen(true);
                   setModalImageGallery(galleryImages);
                 }}
-                className="object-contain cursor-pointer md:object-cover"
+                className="object-contain cursor-pointer md:object-cover inline-block h-auto max-w-[100%]
+                 "
                 src={item.imageUrl}
                 alt={item.alt}
                 loading="lazy"
                 fill
+                quality={100}
               />
             </div>
           )

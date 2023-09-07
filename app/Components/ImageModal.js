@@ -6,11 +6,12 @@ export default function ImageModal({
   imageIdx,
   setImageModalOpen,
   modalImageGallery,
+  videoMode,
 }) {
   const [fadeIn, setFadeIn] = useState(false);
   const [currentImgIdx, setCurrentImgIdx] = useState(imageIdx);
   const [imageLoaded, setImageLoaded] = useState(false);
-  console.log(imageLoaded);
+
   function nextImage(idx) {
     setImageLoaded(false);
     if (idx >= modalImageGallery.length - 1) {
@@ -67,15 +68,24 @@ export default function ImageModal({
         >{`>`}</button>
       </div>
       <div className="carusel w-[100%] max-w-[700px] h-[90%] max-h-[90%] relative">
-        <Image
-          className={`object-contain transition-opacity  ${
-            imageLoaded ? "opacity-100" : "opacity-90"
-          }`}
-          src={modalImageGallery[currentImgIdx]?.imageUrl}
-          alt="alt"
-          loading="lazy"
-          fill={true}
-        />
+        {videoMode ? (
+          <iframe
+            className="w-[380px] h-[250px] md:w-full md:h-[400px] sm:h-[115px]"
+            src={modalImageGallery[currentImgIdx]?.videoUrl}
+            title={modalImageGallery[currentImgIdx]?.videoTitle}
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          ></iframe>
+        ) : (
+          <Image
+            className={`object-contain transition-opacity  ${
+              imageLoaded ? "opacity-100" : "opacity-90"
+            }`}
+            src={modalImageGallery[currentImgIdx]?.imageUrl}
+            alt="alt"
+            loading="lazy"
+            fill={true}
+          />
+        )}
       </div>
     </div>
   );

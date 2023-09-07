@@ -96,10 +96,25 @@ export const socials = [
 
 export const galleryImages = [
   { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
-  { imageUrl: "/athletes.webp", alt: "Image of Rene" },
-  { imageUrl: "/reasons-image.webp", alt: "Image of Rene" },
   { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
   { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
   { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
   { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
+  { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
+  { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
+];
+export const videos = [
+  {
+    videoUrl: "https://www.youtube.com/embed/_2LqAJFy_mA?si=cGYGYyAbCARr95sN",
+    videoTitle: "All I Want For Christmas Is Jul",
+  },
+  {
+    videoUrl: "https://www.youtube.com/embed/GIRBEkxR4Pg?si=N1S8orJeiKzJQSBK",
+    videoTitle: "Sådan får du en god bustur",
+  },
+  {
+    videoUrl:
+      "https://www.youtube.com/embed/Ggy7tJvV64U?si=6AnYLkMVRXu7hBXw&amp;start=17",
+    videoTitle: "Arla® ØKO ost, Vi har gjort vores",
+  },
 ];

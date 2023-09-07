@@ -5,7 +5,7 @@ import { experienceTimeline } from "../data/data";
 export default function PageCV() {
   const [isClicked, setIsClicked] = useState(true);
   return (
-    <div className="w-full bg-white px-8 py-6 h-fit flex flex-col sm:px-4 min-h-screen">
+    <div className="w-full bg-white px-8 py-6 h-fit flex flex-col sm:px-4 min-h-screen grow">
       <div className="w-full bg-white px-8 py-6 h-[128px] md:hidden"></div>
       <article className="w-full bg-white flex flex-col items-center">
         <h1 className="text-3xl mb-10 w-[60%] font-semibold md:w-full md:pt-10 md:px-9 sm:px-2 sm:text-2xl">

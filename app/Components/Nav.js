@@ -1,13 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import HamburgerMenu from "./HamburgerMenu";
 import useMediaQuery from "../utils/useMediaQueries";
+import { AppContext } from "../layout";
 
 export default function Nav({ setSidebarOpen, sidebarOpen }) {
+  const { englishVersion, setEnglishVersion } = useContext(AppContext);
   const breakPoint = useMediaQuery(768);
-
   // Nav links for EN and DA languages:
   const linksDa = [
     { name: "Galleri", href: "/Gallery" },
@@ -22,8 +23,7 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
     { name: "CV and Info", href: "/PageCV" },
   ];
 
-  const [hover, setHover] = useState(false);
-  const [hoveredLink, setHoveredLink] = useState(null);
+  console.log(englishVersion);
 
   // Change language functionality:
   const [danish, setDanish] = useState(false);
@@ -32,9 +32,13 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
   }
   useEffect(() => {
     changeLang();
+    setEnglishVersion();
   }, []);
 
-  const linksToRender = danish ? linksDa : linksEn;
+  const linksToRender = englishVersion ? linksDa : linksEn;
+
+  const [hover, setHover] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState(null);
 
   // hover effect for links
   function hoverEffect(link) {
@@ -76,7 +80,9 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
             );
           })}
           <li className="flex align-middle">
-            <button onClick={changeLang}>{danish ? "English" : "Dansk"}</button>
+            <button onClick={changeLang}>
+              {englishVersion ? "English" : "Dansk"}
+            </button>
           </li>
         </ul>
       </nav>
@@ -91,7 +97,11 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
           <h1 className="text-4xl font-primary">
             <Link href="/">Julius Rene</Link>
           </h1>
-          <h3 className="">Actor & Instrumentalist</h3>
+          <h3>
+            {!englishVersion
+              ? "Actor & Instrumentalist"
+              : "Skuespiller og instrumentalist"}
+          </h3>
         </div>
         <ul
           onMouseLeave={() => {
@@ -120,7 +130,9 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
             );
           })}
           <li className="flex align-middle">
-            <button onClick={changeLang}>{danish ? "English" : "Dansk"}</button>
+            <button onClick={() => setEnglishVersion(!englishVersion)}>
+              {englishVersion ? "English" : "Dansk"}
+            </button>
           </li>
         </ul>
       </nav>

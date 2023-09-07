@@ -76,7 +76,7 @@ export default function ImageModal({
           <iframe
             ref={iframeRef}
             className="w-[90%] h-[100%] md:w-full md:h-[400px] sm:h-[85%]"
-            src={modalImageGallery[currentImgIdx]?.videoUrl}
+            src={`${modalImageGallery[currentImgIdx]?.videoUrl}&autoplay=1`}
             title={modalImageGallery[currentImgIdx]?.videoTitle}
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; autoplay"
             allowFullScreen

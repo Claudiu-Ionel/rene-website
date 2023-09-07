@@ -1,29 +1,23 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useContext } from "react";
 
 import { experienceTimeline } from "../data/data";
+import { AppContext } from "../layout";
 
 export default function Experience() {
-  const [isClicked, setIsClicked] = useState(false);
-  function handleClick() {
-    setIsClicked(!isClicked);
-  }
-  useEffect(() => {
-    handleClick();
-  }, []);
+  const { englishVersion } = useContext(AppContext);
 
   return (
     <article className="w-full bg-white flex flex-col items-center">
-      <button onClick={handleClick}>{isClicked ? "en" : "da"}</button>
       <h2 className="font-primary text-3xl my-10">
-        {isClicked ? "Erfaring" : "Experience"}
+        {englishVersion ? "Erfaring" : "Experience"}
       </h2>
 
       {/* Autobiography text section: */}
 
       <section className="w-[60%] lg:w-[90%] mb-10 font-secondary">
-        <div className={"[&>p]:mb-2" + (isClicked ? " block" : " hidden")}>
+        <div className={"[&>p]:mb-2" + (englishVersion ? " block" : " hidden")}>
           <p>
             Julius René er en skuespiller med stor erfaring inden for reklamer,
             film-produktioner og også flere dokumentarfilm-opgaver i Danmark.
@@ -42,7 +36,7 @@ export default function Experience() {
             Meisner og Method acting.
           </p>
         </div>
-        <div className={"[&>p]:mb-2" + (isClicked ? " hidden" : " block")}>
+        <div className={"[&>p]:mb-2" + (englishVersion ? " hidden" : " block")}>
           <p>
             Julius René is an actor with extensive experience in commercials,
             film productions and also several documentary projects in Denmark.

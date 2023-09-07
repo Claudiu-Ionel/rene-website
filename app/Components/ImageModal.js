@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function ImageModal({
   imageIdx,
@@ -11,7 +11,7 @@ export default function ImageModal({
   const [fadeIn, setFadeIn] = useState(false);
   const [currentImgIdx, setCurrentImgIdx] = useState(imageIdx);
   const [imageLoaded, setImageLoaded] = useState(false);
-
+  const iframeRef = useRef(null);
   function nextImage(idx) {
     setImageLoaded(false);
     if (idx >= modalImageGallery.length - 1) {
@@ -74,10 +74,12 @@ export default function ImageModal({
       >
         {videoMode ? (
           <iframe
+            ref={iframeRef}
             className="w-[90%] h-[100%] md:w-full md:h-[400px] sm:h-[85%]"
             src={modalImageGallery[currentImgIdx]?.videoUrl}
             title={modalImageGallery[currentImgIdx]?.videoTitle}
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope;"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; autoplay"
+            allowFullScreen
           ></iframe>
         ) : (
           <Image

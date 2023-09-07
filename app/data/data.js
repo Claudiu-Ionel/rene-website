@@ -106,17 +106,17 @@ export const galleryImages = [
 export const videos = [
   {
     videoUrl:
-      "https://www.youtube.com/embed/_2LqAJFy_mA?si=cGYGYyAbCARr95sN?showinfo=0&iv_load_policy=3&controls=0&modestbranding&enablejsapi=1",
+      "https://www.youtube.com/embed/_2LqAJFy_mA?si=cGYGYyAbCARr95sN?showinfo=0&iv_load_policy=3&modestbranding&autoplay=1",
     videoTitle: "All I Want For Christmas Is Jul",
   },
   {
     videoUrl:
-      "https://www.youtube.com/embed/GIRBEkxR4Pg?si=N1S8orJeiKzJQSBK?showinfo=0&iv_load_policy=3&controls=0&modestbranding&autoplay=0&enablejsapi=1",
+      "https://www.youtube.com/embed/GIRBEkxR4Pg?si=N1S8orJeiKzJQSBK?showinfo=0&iv_load_policy=3&modestbranding&autoplay=1",
     videoTitle: "Sådan får du en god bustur",
   },
   {
     videoUrl:
-      "https://www.youtube.com/embed/Ggy7tJvV64U?si=6AnYLkMVRXu7hBXw&amp;start=17?showinfo=0&iv_load_policy=3&controls=0&modestbranding&enablejsapi=1",
+      "https://www.youtube.com/embed/Ggy7tJvV64U?si=6AnYLkMVRXu7hBXw&amp;start=17?showinfo=0&iv_load_policy=3&modestbranding&autoplay=1",
     videoTitle: "Arla® ØKO ost, Vi har gjort vores",
   },
 ];

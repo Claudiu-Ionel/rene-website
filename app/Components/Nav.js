@@ -26,12 +26,6 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
 
   console.log(englishVersion);
 
-  // Change language functionality:
-  const [danish, setDanish] = useState(false);
-  function changeLang() {
-    setDanish(!danish);
-  }
-
   const linksToRender = !englishVersion ? linksDa : linksEn;
 
   const [hover, setHover] = useState(false);
@@ -77,8 +71,8 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
             );
           })}
           <li className="flex align-middle">
-            <button onClick={changeLang}>
-              {englishVersion ? "English" : "Dansk"}
+            <button onClick={() => setEnglishVersion(!englishVersion)}>
+              {!englishVersion ? "English" : "Dansk"}
             </button>
           </li>
         </ul>

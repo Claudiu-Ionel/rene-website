@@ -2,6 +2,7 @@
 import { useState } from "react";
 import ImageModal from "../Components/ImageModal";
 import { videos } from "../data/data";
+import { Container } from "postcss";
 export default function Showreel() {
   const [imageModalOpen, setImageModalOpen] = useState(false);
   const [imageIdx, setImgIdx] = useState(0);
@@ -29,21 +30,30 @@ export default function Showreel() {
         <div className="videos w-full flex justify-start md:flex-col gap-x-5 gap-y-6 px-6 py-12 md:px-0 ">
           {videos.map((item, idx) => {
             return (
-              <iframe
-                onClick={() => {
-                  setImgIdx(idx);
-                  setImageModalOpen(true);
-                }}
-                key={idx}
-                className="w-[33%] max-w-[450px] h-[250px] md:w-full md:h-[400px] sm:h-[150px]"
-                src={item.videoUrl}
-                title="YouTube video player"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
-              ></iframe>
+              <div className="w-[33%] max-w-[450px] h-[250px] md:w-full md:h-[400px] sm:h-[150px] relative">
+                <iframe
+                  key={idx}
+                  src={item.videoUrl}
+                  title="YouTube video player"
+                  controls={0}
+                  className="w-full h-[250px] md:w-full md:h-[400px] sm:h-[150px]"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope;"
+                ></iframe>
+                <div
+                  className="w-full h-full absolute top-0 l-0 cursor-pointer"
+                  onClick={() => {
+                    setImageModalOpen(true);
+                    setImgIdx(idx);
+                  }}
+                ></div>
+              </div>
             );
           })}
         </div>
       </div>
     </>
   );
+}
+
+{
 }

@@ -57,7 +57,7 @@ export default function ImageModal({
       >
         X
       </button>
-      <div className="slider-navigation absolute z-[1001] top-1/2 transform -translate-y-1/2 w-full h-[50%] flex items-center justify-between ">
+      <div className="slider-navigation absolute z-[0] top-1/2 transform -translate-y-1/2 w-full h-[50%] flex items-center justify-between ">
         <button
           className="text-white p-5 text-3xl md:hidden"
           onClick={() => prevImage(currentImgIdx)}
@@ -67,13 +67,17 @@ export default function ImageModal({
           onClick={() => nextImage(currentImgIdx)}
         >{`>`}</button>
       </div>
-      <div className="carusel w-[100%] max-w-[700px] h-[90%] max-h-[90%] relative">
+      <div
+        className={`carusel w-[100%] ${
+          videoMode ? "max-w-[90%]" : "max-w-[700px]"
+        } h-[90%] max-h-[90%] relative flex items-center justify-center `}
+      >
         {videoMode ? (
           <iframe
-            className="w-[380px] h-[250px] md:w-full md:h-[400px] sm:h-[115px]"
+            className="w-[90%] h-[100%] md:w-full md:h-[400px] sm:h-[85%]"
             src={modalImageGallery[currentImgIdx]?.videoUrl}
             title={modalImageGallery[currentImgIdx]?.videoTitle}
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope;"
           ></iframe>
         ) : (
           <Image

@@ -22,7 +22,6 @@ export default function RootLayout({ children }) {
         }`}
         suppressHydrationWarning={true}
       >
-        {/* <SideNavbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} /> */}
         <AppContext.Provider value={{ englishVersion, setEnglishVersion }}>
           <Nav
             sidebarOpen={sidebarOpen}

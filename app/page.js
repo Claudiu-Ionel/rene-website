@@ -17,7 +17,7 @@ export default function Home() {
           modalImageGallery={modalImageGallery}
         />
       )}
-      <section className="bg-hero-image w-full h-[905px] bg-cover bg-no-repeat bg-fixed bg-top"></section>
+      <section className="bg-hero-image w-full h-[905px] bg-cover bg-no-repeat bg-fixed bg-top md:h-[700px] md:bg-center sm:h-[550px]"></section>
       <Gallery
         setModalOpen={setImageModalOpen}
         setImgIdx={setImgIdx}

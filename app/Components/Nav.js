@@ -46,7 +46,7 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
         className={`hidden md:flex justify-between px-10 font-secondary relative z-10 top-0 sm:px-6 `}
       >
         <div className="px-5 py-2 flex flex-col justify-center sm:px-0 sm:py-0">
-          <h1 className="text-2xl font-primary sm:text-xl">
+          <h1 className="text-2xl font-primary md:text-xl sm:text-xl">
             <Link href="/">Julius Rene Leo</Link>
           </h1>
         </div>
@@ -85,7 +85,7 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
         className={`w-nav flex justify-between px-8 py-6 font-secondary absolute z-10 top-[40px] left-[40px]`}
       >
         <div className="px-5 py-2">
-          <h1 className="text-4xl font-primary sm:text-xl">
+          <h1 className="text-3xl font-primary sm:text-xl">
             <Link href="/">Julius Rene Leo</Link>
           </h1>
           <h3>

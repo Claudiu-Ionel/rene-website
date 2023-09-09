@@ -15,16 +15,16 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
 
   // Nav links for EN and DA languages:
   const linksDa = [
-    { name: "Galleri", href: "/Gallery" },
-    { name: "Showreel", href: "/Showreel" },
-    { name: "Kontakt", href: "/Contact" },
     { name: "CV og Info", href: "/PageCV" },
+    { name: "Galleri", href: "/Gallery" },
+    { name: "Kontakt", href: "/Contact" },
+    { name: "Showreel", href: "/Showreel" },
   ];
   const linksEn = [
-    { name: "Gallery", href: "/Gallery" },
-    { name: "Showreel", href: "/Showreel" },
-    { name: "Contact", href: "/Contact" },
     { name: "CV and Info", href: "/PageCV" },
+    { name: "Gallery", href: "/Gallery" },
+    { name: "Contact", href: "/Contact" },
+    { name: "Showreel", href: "/Showreel" },
   ];
 
   const linksToRender = !englishVersion ? linksDa : linksEn;
@@ -68,7 +68,7 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
         } space-y-5`}
         >
           {linksToRender.map((link, idx) => {
-            if (idx === 0) {
+            if (idx === 1) {
               return (
                 <li key={link.name} className="flex align-middle relative">
                   <details
@@ -106,7 +106,10 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
             );
           })}
           <li className="flex align-middle">
-            <button onClick={() => setEnglishVersion(!englishVersion)}>
+            <button
+              className="border border-backgroundColor border-solid p-2 rounded-md"
+              onClick={() => setEnglishVersion(!englishVersion)}
+            >
               {!englishVersion ? "English" : "Dansk"}
             </button>
           </li>
@@ -140,7 +143,7 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
         ${!hover ? "opacity-100" : ""}`}
         >
           {linksToRender.map((link, idx) => {
-            if (idx === 0) {
+            if (idx === 1) {
               return (
                 <li key={link.name} className="flex align-middle relative">
                   <details className="cursor-pointer">
@@ -176,7 +179,10 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
             );
           })}
           <li className="flex align-middle">
-            <button onClick={() => setEnglishVersion(!englishVersion)}>
+            <button
+              className="border border-backgroundColor border-solid p-2 rounded-md hover:bg-backgroundColor hover:text-white"
+              onClick={() => setEnglishVersion(!englishVersion)}
+            >
               {!englishVersion ? "English" : "Dansk"}
             </button>
           </li>

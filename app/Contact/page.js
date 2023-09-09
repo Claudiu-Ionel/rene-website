@@ -11,7 +11,7 @@ export default function Contact() {
       <h2 className="w-1/3 font-primary text-3xl my-10 sm:w-full text-center">
         {englishVersion ? "Contact me:" : "Kontakt mig:"}
       </h2>
-      <div className="w-1/3 md:w-full md:px-5 mb-5">
+      <div className="w-1/3 md:w-full md:px-5 mb-5 text-center">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget
           auctor augue. Sed justo risus, tristique ut magna a, ullamcorper

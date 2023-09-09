@@ -30,7 +30,7 @@ module.exports = {
         nav: "calc(100% - 80px)",
       },
       backgroundImage: {
-        "hero-image": "url(/Julius.jpg)",
+        "hero-image": "url(/Julius-Rene-hero_image.png)",
       },
     },
   },

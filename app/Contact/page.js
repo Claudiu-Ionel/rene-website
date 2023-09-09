@@ -11,8 +11,21 @@ export default function Contact() {
       <h2 className="w-1/3 font-primary text-3xl my-10 sm:w-full text-center">
         {englishVersion ? "Contact me:" : "Kontakt mig:"}
       </h2>
+      <div className="w-1/3 md:w-full md:px-5 mb-5">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget
+          auctor augue. Sed justo risus, tristique ut magna a, ullamcorper
+          consequat eros. Donec sodales ex vel leo molestie consequat. Donec
+          arcu tellus, vulputate porta tortor ac, porta semper lacus.
+          Pellentesque sed justo elementum, condimentum felis vel, tempus mi.
+          Fusce convallis tincidunt posuere. Integer dui urna, tincidunt eu
+          vulputate ac, luctus ac leo. Mauris laoreet ante vitae imperdiet
+          dignissim. Sed ultricies vestibulum ante. Aliquam est neque, tempor
+          mollis semper at, fringilla quis arcu.
+        </p>
+      </div>
       <form className="w-1/3 md:w-full md:px-5 flex flex-col items-center [&>label]:w-full [&>label]:font-secondary [&>input]:w-full [&>input]:bg-backgroundColor/25 [&>input]:rounded-md [&>input]:p-2 [&>input]:mb-4 [&>input]:font-secondary">
-        <label for="userName">{englishVersion ? "Name" : "Navn:"}</label>
+        <label for="userName">{englishVersion ? "Name:" : "Navn:"}</label>
         <input type="text" name="userName" required></input>
 
         <label for="userEmail" required>

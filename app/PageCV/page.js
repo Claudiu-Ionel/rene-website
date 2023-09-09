@@ -9,9 +9,9 @@ export default function PageCV() {
       <div className="w-full bg-white px-8 py-6 h-[128px] md:hidden"></div>
       <article className="w-full bg-white flex flex-col items-center">
         {/* Autobiography text section: */}
-        <section className="w-[60%] lg:w-[90%] mb-10 font-secondary">
+        <div className="w-[60%] lg:w-[90%] mb-10 font-secondary">
           <Experience />
-        </section>
+        </div>
 
         {/* The projects timeline: */}
       </article>

@@ -11,7 +11,7 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
   const [detailsOpen, setDetailsOpen] = useState(false);
   const [hover, setHover] = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
-  const breakPoint = useMediaQuery(768);
+  const breakPoint = useMediaQuery(820);
 
   // Nav links for EN and DA languages:
   const linksDa = [
@@ -47,7 +47,7 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
     // nav bar for screens with (max-width: 768px)
     return (
       <nav
-        className={`hidden md:flex justify-between px-10 font-secondary relative z-10 top-0 sm:px-6 `}
+        className={` flex justify-between px-10 font-secondary relative z-10 top-0  sm:px-6  `}
       >
         <div className="px-5 py-2 flex flex-col justify-center sm:px-0 sm:py-0">
           <h1 className="text-2xl font-primary md:text-xl sm:text-xl">
@@ -68,7 +68,7 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
         } space-y-5`}
         >
           {linksToRender.map((link, idx) => {
-            if (idx === 1) {
+            if (idx === 0) {
               return (
                 <li key={link.name} className="flex align-middle relative">
                   <details
@@ -143,7 +143,7 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
         ${!hover ? "opacity-100" : ""}`}
         >
           {linksToRender.map((link, idx) => {
-            if (idx === 1) {
+            if (idx === 0) {
               return (
                 <li key={link.name} className="flex align-middle relative">
                   <details className="cursor-pointer">

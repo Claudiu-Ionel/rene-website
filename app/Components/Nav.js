@@ -8,6 +8,7 @@ import { AppContext } from "../layout";
 
 export default function Nav({ setSidebarOpen, sidebarOpen }) {
   const { englishVersion, setEnglishVersion } = useContext(AppContext);
+  const [detailsOpen, setDetailsOpen] = useState(false);
   console.log(englishVersion);
   const breakPoint = useMediaQuery(768);
   // Nav links for EN and DA languages:
@@ -24,12 +25,16 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
     { name: "CV and Info", href: "/PageCV" },
   ];
 
-  console.log(englishVersion);
-
   const linksToRender = !englishVersion ? linksDa : linksEn;
 
   const [hover, setHover] = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
+
+  function resetNavUi(e) {
+    e.preventDefault();
+    setSidebarOpen(false);
+    setDetailsOpen(false);
+  }
 
   // hover effect for links
   function hoverEffect(link) {
@@ -47,7 +52,9 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
       >
         <div className="px-5 py-2 flex flex-col justify-center sm:px-0 sm:py-0">
           <h1 className="text-2xl font-primary md:text-xl sm:text-xl">
-            <Link href="/">Julius Rene Leo</Link>
+            <Link onClick={(e) => resetNavUi(e)} href="/">
+              Julius Rene Leo
+            </Link>
           </h1>
         </div>
         <HamburgerMenu
@@ -61,10 +68,33 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
           sidebarOpen ? "opacity-100 scale-x-100" : " opacity-0 scale-x-0"
         } space-y-5`}
         >
-          {linksToRender.map((link) => {
+          {linksToRender.map((link, idx) => {
+            if (idx === 0) {
+              return (
+                <li key={link.name} className="flex align-middle relative">
+                  <details
+                    onClick={() => {
+                      setDetailsOpen(!detailsOpen);
+                    }}
+                    className="cursor-pointer"
+                    open={detailsOpen}
+                  >
+                    <summary>{link.name}</summary>
+                    <div className="flex flex-col space-y-2 absolute left-[140%] top-[0] box-shadow">
+                      <Link onClick={(e) => resetNavUi(e)} href="/Gallery">
+                        Portfolios
+                      </Link>
+                      <Link onClick={(e) => resetNavUi(e)} href="/Gallery">
+                        Headshots
+                      </Link>
+                    </div>
+                  </details>
+                </li>
+              );
+            }
             return (
               <li key={link.name} className="flex align-middle">
-                <Link onClick={() => setSidebarOpen(false)} href={link.href}>
+                <Link onClick={() => resetNavUi()} href={link.href}>
                   {link.name}
                 </Link>
               </li>
@@ -74,6 +104,9 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
             <button onClick={() => setEnglishVersion(!englishVersion)}>
               {!englishVersion ? "English" : "Dansk"}
             </button>
+          </li>
+          <li className="absolute w-fit top-[100%] left-1/2 transform -translate-x-1/2 ">
+            test
           </li>
         </ul>
       </nav>
@@ -101,10 +134,35 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
           className={`flex flex-row justify-end space-x-5 items-center
         ${!hover ? "opacity-100" : ""}`}
         >
-          {linksToRender.map((link) => {
+          {linksToRender.map((link, idx) => {
+            if (idx === 0) {
+              return (
+                <li key={link.name} className="flex align-middle relative">
+                  <details className="cursor-pointer">
+                    <summary>{link.name}</summary>
+                    <div className="flex flex-col space-y-2 absolute top-[30px] box-shadow">
+                      <Link
+                        onClick={() => setSidebarOpen(false)}
+                        href="/Gallery"
+                      >
+                        Portfolios
+                      </Link>
+                      <Link
+                        onClick={() => setSidebarOpen(false)}
+                        href="/Gallery"
+                      >
+                        Headshots
+                      </Link>
+                    </div>
+                  </details>
+                </li>
+              );
+            }
             return (
               <li key={link.name} className="flex align-middle">
                 <Link
+                  onClick={() => setSidebarOpen(false)}
+                  href={link.href}
                   className={`${hoverEffect(link)} transition duration-200`}
                   onMouseEnter={() => {
                     setHover(true);
@@ -113,7 +171,6 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
                   onMouseLeave={() => {
                     setHoveredLink(null);
                   }}
-                  href={link.href}
                 >
                   {link.name}
                 </Link>

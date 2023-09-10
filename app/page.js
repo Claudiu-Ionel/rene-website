@@ -25,7 +25,7 @@ export default function Home() {
         setModalImageGallery={setModalImageGallery}
       />
       <div className="w-full bg-white p-5 flex justify-center font-secondary">
-        <div className="w-1/3">
+        <div className="w-1/3 ipadAir:w-full ipadAir:p-1 font-secondary">
           <h2>This is a welcome text:</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent

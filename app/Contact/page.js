@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useContext } from "react";
 import { AppContext } from "../layout";
 
@@ -11,21 +12,26 @@ export default function Contact() {
       <h2 className="w-1/3 font-primary text-3xl my-10 sm:w-full text-center">
         {englishVersion ? "Contact me:" : "Kontakt mig:"}
       </h2>
-      <div className="w-full flex justify-evenly ipadAir:flex-col">
-        <div className="w-1/3 ipadAir:w-full ipadAir:px-5 mb-5 text-center">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-            eget auctor augue. Sed justo risus, tristique ut magna a,
-            ullamcorper consequat eros. Donec sodales ex vel leo molestie
-            consequat. Donec arcu tellus, vulputate porta tortor ac, porta
-            semper lacus. Pellentesque sed justo elementum, condimentum felis
-            vel, tempus mi. Fusce convallis tincidunt posuere. Integer dui urna,
-            tincidunt eu vulputate ac, luctus ac leo. Mauris laoreet ante vitae
-            imperdiet dignissim. Sed ultricies vestibulum ante. Aliquam est
-            neque, tempor mollis semper at, fringilla quis arcu.
+      <div className="w-full flex justify-evenly ipadAir:flex-col font-secondary text-xl">
+        <div className="w-[45%] ipadAir:w-full text-center [&>p]px-3 flex flex-col items-center">
+          <p className={!englishVersion ? " block" : " hidden"}>
+            For henvendelser, smid mig en besked i kontaktformularen og jeg vil
+            vende tilbage hurtigst muligt.
           </p>
+          <p className={englishVersion ? " block" : " hidden"}>
+            For enquiries, drop me a message in the contact form and I will get
+            back to you as soon as possible.
+          </p>
+          <Image
+            src="/Contactme.jpg"
+            alt="Julius Rene Leo"
+            width="450"
+            height="300"
+            className="object-contain my-3"
+          />
         </div>
-        <form className="w-1/3 ipadAir:w-full ipadAir:px-5 flex flex-col items-center [&>label]:w-full [&>label]:font-secondary [&>input]:w-full [&>input]:bg-backgroundColor/25 [&>input]:rounded-md [&>input]:p-2 [&>input]:mb-4 [&>input]:font-secondary">
+
+        <form className="w-[45%] ipadAir:w-full ipadAir:px-5 flex flex-col items-center [&>label]:w-full [&>label]:font-secondary [&>input]:w-full [&>input]:bg-backgroundColor/25 [&>input]:rounded-md [&>input]:p-2 [&>input]:mb-4 [&>input]:font-secondary">
           <label for="userName">{englishVersion ? "Name:" : "Navn:"}</label>
           <input type="text" name="userName" required></input>
 

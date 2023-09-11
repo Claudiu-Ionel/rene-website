@@ -25,7 +25,7 @@ module.exports = {
     extend: {
       fontFamily: {
         primary: ["Libre Bodoni", "serif"],
-        secondary: ["Nanum Gothic", "sans-serif"],
+        secondary: ["Playfair Display", "serif"],
       },
       width: {
         nav: "calc(100% - 80px)",

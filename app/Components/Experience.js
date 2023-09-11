@@ -16,7 +16,7 @@ export default function Experience() {
 
       {/* Autobiography text section: */}
 
-      <section className="w-[60%] lg:w-[90%] mb-10 font-secondary">
+      <section className="w-[60%] lg:w-[90%] mb-10 font-secondary text-xl">
         <div
           className={"[&>p]:mb-2" + (!englishVersion ? " block" : " hidden")}
         >
@@ -67,7 +67,7 @@ export default function Experience() {
         {experienceTimeline.map(({ year, projects }, idx) => (
           <div key={idx} className="w-full flex mb-10 lg:flex-col">
             <h3 className="text-2xl w-[20%] font-secondary">{year}</h3>
-            <div className="w-[80%] font-secondary">
+            <div className="w-[80%] font-secondary text-xl">
               {projects.map((project, idx) => (
                 <p key={`project${idx}`}>{project}</p>
               ))}

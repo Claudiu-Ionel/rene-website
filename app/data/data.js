@@ -95,10 +95,10 @@ export const socials = [
 ];
 
 export const galleryImages = [
-  { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
-  { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
-  { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
-  { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
+  { imageUrl: "/001.jpg", alt: "Image of Rene" },
+  { imageUrl: "/002.jpg", alt: "Image of Rene" },
+  { imageUrl: "/003.jpg", alt: "Image of Rene" },
+  { imageUrl: "/004.jpg", alt: "Image of Rene" },
   { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
   { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
   { imageUrl: "/Julius.jpg", alt: "Image of Rene" },

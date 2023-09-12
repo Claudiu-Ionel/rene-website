@@ -12,13 +12,13 @@ export default function Contact() {
       <h2 className="w-1/3 font-primary text-3xl my-10 sm:w-full text-center">
         {englishVersion ? "Contact me:" : "Kontakt mig:"}
       </h2>
-      <div className="w-full flex justify-evenly ipadAir:flex-col font-secondary text-xl">
-        <div className="w-[45%] ipadAir:w-full text-center [&>p]px-3 flex flex-col items-center">
-          <p className={!englishVersion ? " block" : " hidden"}>
+      <div className="w-full flex justify-center ipadAir:flex-col font-secondary text-xl">
+        <div className="w-[30%] ipadAir:w-full text-center flex flex-col items-center">
+          <p className={"px-5" + (!englishVersion ? " block" : " hidden")}>
             For henvendelser, smid mig en besked i kontaktformularen og jeg vil
             vende tilbage hurtigst muligt.
           </p>
-          <p className={englishVersion ? " block" : " hidden"}>
+          <p className={"px-5" + (englishVersion ? " block" : " hidden")}>
             For enquiries, drop me a message in the contact form and I will get
             back to you as soon as possible.
           </p>
@@ -31,7 +31,7 @@ export default function Contact() {
           />
         </div>
 
-        <form className="w-[45%] ipadAir:w-full ipadAir:px-5 flex flex-col items-center [&>label]:w-full [&>label]:font-secondary [&>input]:w-full [&>input]:bg-backgroundColor/25 [&>input]:rounded-md [&>input]:p-2 [&>input]:mb-4 [&>input]:font-secondary">
+        <form className="w-[30%] ipadAir:w-full ipadAir:px-5 flex flex-col items-center [&>label]:w-full [&>label]:font-secondary [&>input]:w-full [&>input]:bg-backgroundColor/25 [&>input]:rounded-md [&>input]:p-2 [&>input]:mb-4 [&>input]:font-secondary">
           <label for="userName">{englishVersion ? "Name:" : "Navn:"}</label>
           <input type="text" name="userName" required></input>
 

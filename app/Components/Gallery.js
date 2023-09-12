@@ -16,7 +16,6 @@ export default function Gallery({
       id="gallery-section"
       className="grid grid-rows-2 grid-cols-3 bg-white w-full h-[95vw] justify-center gap-x-2 gap-y-2 py-16 px-14 md:px-10 md:gap-3 md:h-[80vw] sm:grid-rows-3 sm:grid-cols-2 sm:px-5 sm:h-[200vw] sm:gap-y-5"
     >
-      <Experience></Experience>
       {galleryImages.map((item, idx) => {
         return (
           idx < limit && (

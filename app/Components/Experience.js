@@ -63,7 +63,7 @@ export default function Experience() {
 
       {/* The projects timeline: */}
 
-      <section className="w-[60%] lg:w-[90%]">
+      {/* <section className="w-[60%] lg:w-[90%]">
         {experienceTimeline.map(({ year, projects }, idx) => (
           <div key={idx} className="w-full flex mb-10 lg:flex-col">
             <h3 className="text-2xl w-[20%] font-secondary">{year}</h3>
@@ -74,7 +74,7 @@ export default function Experience() {
             </div>
           </div>
         ))}
-      </section>
+      </section> */}
     </article>
   );
 

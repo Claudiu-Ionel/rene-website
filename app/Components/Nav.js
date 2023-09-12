@@ -68,7 +68,7 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
         } space-y-5`}
         >
           {linksToRender.map((link, idx) => {
-            if (idx === 0) {
+            if (idx === 1) {
               return (
                 <li key={link.name} className="flex align-middle relative">
                   <details
@@ -82,7 +82,7 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
                     <div className="flex flex-col space-y-2 absolute left-[140%] top-[0] box-shadow">
                       <Link
                         onClick={(e) => setSidebarOpen(false)}
-                        href="/Gallery"
+                        href="/Portofolios"
                       >
                         {englishVersion ? "Portfolios" : "Porteføljer"}
                       </Link>
@@ -143,13 +143,13 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
         ${!hover ? "opacity-100" : ""}`}
         >
           {linksToRender.map((link, idx) => {
-            if (idx === 0) {
+            if (idx === 1) {
               return (
                 <li key={link.name} className="flex align-middle relative">
                   <details className="cursor-pointer">
                     <summary>{link.name}</summary>
                     <div className="flex flex-col space-y-2 absolute top-[30px] box-shadow">
-                      <Link href="/Gallery">
+                      <Link href="/Portofolios">
                         {englishVersion ? "Portfolios" : "Porteføljer"}
                       </Link>
                       <Link href="/Gallery">

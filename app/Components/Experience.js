@@ -16,9 +16,34 @@ export default function Experience() {
 
       {/* Autobiography text section: */}
 
-      <section className="w-[60%] lg:w-[90%] mb-10 font-secondary text-xl">
+      <section className="w-[60%] lg:w-[90%] mb-10 font-secondary text-xl text-justify">
+        <div className={"[&>p]:mb-4" + (englishVersion ? " block" : " hidden")}>
+          <p>
+            Julius René is an actor with extensive experience in advertising,
+            film productions and also several documentary film assignments in
+            Denmark. He has also appeared in worldwide series - Borgen 4.
+          </p>
+          <p>
+            Julius René always has a very professional approach to his acting -
+            both in his performance on stage and on film. His disciplined but
+            also playful and creative approach to his tasks clearly shows his
+            dedication and passion for acting. He masters all genres - from
+            drama to comedy. He is trained in Meisner and Method acting.
+          </p>
+          <p>
+            He graduated from the Solistklassen Advanced Postgraduate degree
+            (PhD level) in bass trombone from The National Academy of Music and
+            throughout his career has played with the Aalborg Symphony
+            Orchestra, the Schleswig Musikkorps, the Prince's Musikkorps, the
+            Odense Symphony Orchestra, Dr Bigband and has also participated in
+            concerts in abroad. He has also worked with Mich Hedin Hansen
+            (CutFather) and also appears on records by the Danish rapper
+            Nikoline Nikoline and the Danish electropop group When Saints Go
+            Machine.
+          </p>
+        </div>
         <div
-          className={"[&>p]:mb-2" + (!englishVersion ? " block" : " hidden")}
+          className={"[&>p]:mb-4" + (!englishVersion ? " block" : " hidden")}
         >
           <p>
             Julius René er en skuespiller med stor erfaring inden for reklamer,
@@ -30,33 +55,17 @@ export default function Experience() {
             - både i sin optræden på scene og på film set. Hans disciplinerede
             men også legende og kreative tilgang til sine opgaver viser tydeligt
             hans dedikation og passion for skuespillet. Han mestrer alle genrer
-            - fra drama til comedy.
+            - fra drama til comedy. Han er skolet i Meisner og Method acting.
           </p>
           <p>
-            Han har tillige opnået en Advanced Postgraduate-grad (PhD-niveau) i
-            basbasun fra The National Academy of Music. Og er også lidt skolet i
-            Meisner og Method acting.
-          </p>
-        </div>
-        <div
-          className={"[&>p]:mb-2" + (!englishVersion ? " hidden" : " block")}
-        >
-          <p>
-            Julius René is an actor with extensive experience in commercials,
-            film productions and also several documentary projects in Denmark.
-            He has also appeared in worldwide series - eg Borgen 4.
-          </p>
-          <p>
-            Julius René always has a very professional approach to his acting -
-            both in his performance on stage and on film. His disciplined but
-            also playful and creative approach to his tasks clearly shows his
-            dedication and passion for acting. He masters all genres - from
-            drama to comedy.
-          </p>
-          <p>
-            He also holds an Advanced Postgraduate degree (PhD level) in bass
-            trombone from The National Academy of Music. And is also a little
-            schooled in Meisner and Method acting.
+            Han er uddannet fra Solistklassen Advanced Postgraduate-grad
+            (PhD-niveau) i basbasun fra The National Academy of Music og har
+            gennem sin karriere spillet med Aalborg Symfoniorkester, Slesvigske
+            Musikkorps, Prinsens Musikkorps, Odense Symfoniorkester, Dr Bigband
+            og har tillige medvirket i koncerter i udlandet. Han har desuden
+            arbejdet med Mich Hedin Hansen (CutFather) og medvirker desuden på
+            plader af den danske rapper Nikoline Nikoline og den danske
+            elektropop gruppe When Saints Go Machine.
           </p>
         </div>
       </section>

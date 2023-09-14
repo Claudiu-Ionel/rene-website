@@ -12,9 +12,9 @@ export default function Contact() {
       <h2 className="w-1/3 font-primary text-3xl my-10 sm:w-full text-center">
         {englishVersion ? "Contact me:" : "Kontakt mig:"}
       </h2>
-      <div className="w-full flex justify-center ipadAir:flex-col font-secondary text-xl">
-        <div className="w-[30%] ipadAir:w-full text-center flex flex-col items-center">
-          <p className={"px-5" + (!englishVersion ? " block" : " hidden")}>
+      <div className="w-full flex justify-evenly ipadAir:flex-col font-secondary text-xl">
+        <div className="w-[30%] ipadAir:w-full text-justify flex flex-col items-center">
+          <p className={"px-6" + (!englishVersion ? " block" : " hidden")}>
             For henvendelser, smid mig en besked i kontaktformularen og jeg vil
             vende tilbage hurtigst muligt.
           </p>
@@ -47,7 +47,7 @@ export default function Contact() {
           <textarea
             name="message"
             className="bg-backgroundColor/25 rounded-md p-2 font-secondary w-full"
-            rows="20"
+            rows="17"
             cols="10"
           ></textarea>
           <button className="m-5 font-secondary border-solid border-backgroundColor border-2 rounded-md p-5 w-1/4">

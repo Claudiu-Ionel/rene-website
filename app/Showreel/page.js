@@ -21,10 +21,10 @@ export default function Showreel() {
       <div className="w-full bg-white px-8 py-6 h-fit flex flex-col sm:px-4 grow">
         <div className="w-full bg-white px-8 py-6 h-[128px] md:hidden"></div>
         <div className="title flex flex-col justify-center h-fit w-full py-12 px-6">
-          <h1 className="text-3xl mb-4 text-center font-bold">
+          <h1 className="text-3xl mb-4 text-center font-bold font-primary">
             {englishVersion ? "Here is my Showreel" : "Her er mit Showreel"}
           </h1>
-          <h3 className="text-sm mt-2 text-center font-semibold">
+          <h3 className="text-sm mt-2 text-center font-semibold font-secondary">
             {englishVersion
               ? `Commercials I have been into..`
               : "Reklamer jeg har været til.."}

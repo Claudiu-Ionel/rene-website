@@ -32,7 +32,7 @@ export default function Home() {
         setModalImageGallery={setModalImageGallery}
       />
       <div className="w-full bg-white p-5 flex justify-center font-secondary text-xl">
-        <div className="w-1/3 ipadAir:w-full ipadAir:p-1 font-secondary [&>div]:w-full">
+        <div className="w-1/3 ipadAir:w-full ipadAir:p-1 font-secondary [&>div]:w-full text-justify">
           <div
             className={
               "[&>p]:mb-2 font-secondary" +

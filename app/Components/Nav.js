@@ -14,21 +14,21 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
   const breakPoint = useMediaQuery(820);
 
   // Nav links for EN and DA languages:
-  const linksDa = [
-    { name: "CV og Info", href: "/PageCV" },
-    { name: "Galleri", href: "/Gallery" },
-    { name: "Kontakt", href: "/Contact" },
-    { name: "Showreel", href: "/Showreel" },
+  /* const linksDa = [
+    { name: "CV og Info", href: "/PageCV", border: "" },
+    { name: "Galleri", href: "/Gallery", border: "" },
+    { name: "Kontakt", href: "/Contact", border: "" },
+    { name: "Showreel", href: "/Showreel", border: "" },
   ];
   const linksEn = [
-    { name: "CV and Info", href: "/PageCV" },
-    { name: "Gallery", href: "/Gallery" },
-    { name: "Contact", href: "/Contact" },
-    { name: "Showreel", href: "/Showreel" },
+    { name: "CV and Info", href: "/PageCV", border: "" },
+    { name: "Gallery", href: "/Gallery", border: "" },
+    { name: "Contact", href: "/Contact", border: "" },
+    { name: "Showreel", href: "/Showreel", border: "" },
   ];
 
   const linksToRender = !englishVersion ? linksDa : linksEn;
-
+ */
   function resetNavUi(event) {
     event.preventDefault();
     setSidebarOpen(false);
@@ -36,12 +36,12 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
   }
 
   // hover effect for links
-  function hoverEffect(link) {
+  /* function hoverEffect(link) {
     if (!hover) {
       return "opacity-100";
     }
     return hoveredLink === link.name && hover ? "" : "opacity-30";
-  }
+  } */
 
   if (breakPoint) {
     // nav bar for screens with (max-width: 768px)
@@ -52,7 +52,7 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
         <div className="px-5 py-2 flex flex-col justify-center sm:px-0 sm:py-0">
           <h1 className="text-2xl font-primary md:text-xl sm:text-xl">
             <Link onClick={() => setSidebarOpen(false)} href="/">
-              Julius Rene Leo
+              Julius René Leo
             </Link>
           </h1>
         </div>
@@ -67,7 +67,55 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
           sidebarOpen ? "opacity-100 scale-x-100" : " opacity-0 scale-x-0"
         } space-y-5`}
         >
-          {linksToRender.map((link, idx) => {
+          <li>
+            <Link href="/">Home</Link>
+          </li>
+          <li>
+            <Link href="/PageCV">
+              {englishVersion ? "CV and Info" : "CV og Info"}
+            </Link>
+          </li>
+          <li>
+            <details
+              onClick={() => {
+                setDetailsOpen(!detailsOpen);
+              }}
+              className="cursor-pointer"
+              open={detailsOpen}
+            >
+              <summary>{englishVersion ? "Gallery" : "Galleri"}</summary>
+              <div className="flex flex-col space-y-2 absolute left-[22%] top-[12%] box-shadow">
+                <Link
+                  onClick={(e) => setSidebarOpen(false)}
+                  href="/Portofolios"
+                >
+                  {englishVersion ? "Portfolios" : "Porteføljer"}
+                </Link>
+                <Link onClick={(e) => setSidebarOpen(false)} href="/Gallery">
+                  {englishVersion ? "Headshots" : "Portrætfotos"}
+                </Link>
+              </div>
+            </details>
+          </li>
+
+          <li>
+            <Link href="/Showreel">Showreel</Link>
+          </li>
+          <li>
+            <button onClick={() => setEnglishVersion(!englishVersion)}>
+              {!englishVersion ? "English" : "Dansk"}
+            </button>
+          </li>
+          <li>
+            <Link
+              href="/Contact"
+              className="border border-backgroundColor border-solid p-2 rounded-md"
+            >
+              {englishVersion ? "Contact" : "Kontakt"}
+            </Link>
+          </li>
+
+          {/* {linksToRender.map((link, idx) => {
             if (idx === 1) {
               return (
                 <li key={link.name} className="flex align-middle relative">
@@ -115,7 +163,7 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
           </li>
           <li className="absolute w-fit top-[100%] left-1/2 transform -translate-x-1/2 ">
             test
-          </li>
+          </li> */}
         </ul>
       </nav>
     );
@@ -127,12 +175,12 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
       >
         <div className="px-5 py-2">
           <h1 className="text-3xl font-primary sm:text-xl">
-            <Link href="/">Julius Rene Leo</Link>
+            <Link href="/">Julius René Leo</Link>
           </h1>
           <h3>
             {englishVersion
               ? "Actor & Instrumentalist"
-              : "Skuespiller og instrumentalist"}
+              : "Skuespiller & instrumentalist"}
           </h3>
         </div>
         <ul
@@ -142,7 +190,59 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
           className={`flex flex-row justify-end space-x-5 items-center
         ${!hover ? "opacity-100" : ""}`}
         >
-          {linksToRender.map((link, idx) => {
+          <li className="hover:opacity-30 transition duration-200">
+            <Link href="/">Home</Link>
+          </li>
+          <li className="hover:opacity-30 transition duration-200">
+            <Link href="/PageCV">
+              {englishVersion ? "CV and Info" : "CV og Info"}
+            </Link>
+          </li>
+          <li>
+            <details
+              onClick={() => {
+                setDetailsOpen(!detailsOpen);
+              }}
+              className="cursor-pointer "
+              open={detailsOpen}
+            >
+              <summary>{englishVersion ? "Gallery" : "Galleri"}</summary>
+              <div className="flex flex-col space-y-2 absolute  box-shadow">
+                <Link
+                  onClick={(e) => setSidebarOpen(false)}
+                  href="/Portofolios"
+                  className="hover:opacity-30 transition duration-200 mt-3"
+                >
+                  {englishVersion ? "Portfolios" : "Porteføljer"}
+                </Link>
+                <Link
+                  onClick={(e) => setSidebarOpen(false)}
+                  href="/Gallery"
+                  className="hover:opacity-30 transition duration-200"
+                >
+                  {englishVersion ? "Headshots" : "Portrætfotos"}
+                </Link>
+              </div>
+            </details>
+          </li>
+          <li className="hover:opacity-30 transition duration-200">
+            <Link href="/Showreel">Showreel</Link>
+          </li>
+          <li className="hover:opacity-30 transition duration-200">
+            <button onClick={() => setEnglishVersion(!englishVersion)}>
+              {!englishVersion ? "English" : "Dansk"}
+            </button>
+          </li>
+          <li className="">
+            <Link
+              href="/Contact"
+              className="border border-backgroundColor border-solid p-2 rounded-md hover:opacity-30 transition duration-200"
+            >
+              {englishVersion ? "Contact" : "Kontakt"}
+            </Link>
+          </li>
+
+          {/* {linksToRender.map((link, idx) => {
             if (idx === 1) {
               return (
                 <li key={link.name} className="flex align-middle relative">
@@ -185,7 +285,7 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
             >
               {!englishVersion ? "English" : "Dansk"}
             </button>
-          </li>
+          </li> */}
         </ul>
       </nav>
     );

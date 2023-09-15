@@ -3,9 +3,45 @@
 import Image from "next/image";
 import { useContext } from "react";
 import { AppContext } from "../layout";
+import { send } from "@emailjs/browser";
 
 export default function Contact() {
+  // lang switch:
   const { englishVersion } = useContext(AppContext);
+  // Email JS functionality:
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    send(
+      process.env.NEXT_PUBLIC_SERVICE_ID,
+      process.env.NEXT_PUBLIC_TEMPLATE_ID,
+      { senderName, senderEmail, msg },
+      process.env.NEXT_PUBLIC_PUBLIC_KEY
+    ).then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+  };
+  // Handling the user msg:
+  const [senderName, setSenderName] = useState("");
+  const [senderEmail, setSenderEmail] = useState("");
+  const [msg, setMsg] = useState("");
+
+  // Grabbing user's input:
+  const handleSenderName = (e) => {
+    setSenderName(e.target.value);
+  };
+  const handleSenderEmail = (e) => {
+    setSenderEmail(e.target.value);
+  };
+  const handleMsg = (e) => {
+    setMsg(e.target.value);
+  };
+
   return (
     <div className="w-full bg-white flex flex-col items-center">
       <div className="w-full bg-white px-8 py-6 h-[128px] ipadAir:hidden"></div>

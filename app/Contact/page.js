@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AppContext } from "../layout";
 import { send } from "@emailjs/browser";
 

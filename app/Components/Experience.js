@@ -34,9 +34,9 @@ export default function Experience() {
             He graduated from the Solistklassen Advanced Postgraduate degree
             (PhD level) in bass trombone from The National Academy of Music and
             throughout his career has played with the Aalborg Symphony
-            Orchestra, the Schleswig Musikkorps, the Prince's Musikkorps, the
-            Odense Symphony Orchestra, Dr Bigband and has also participated in
-            concerts in abroad. He has also worked with Mich Hedin Hansen
+            Orchestra, the Schleswig Musikkorps, the Prince&apos;s Musikkorps,
+            the Odense Symphony Orchestra, Dr Bigband and has also participated
+            in concerts in abroad. He has also worked with Mich Hedin Hansen
             (CutFather) and also appears on records by the Danish rapper
             Nikoline Nikoline and the Danish electropop group When Saints Go
             Machine.

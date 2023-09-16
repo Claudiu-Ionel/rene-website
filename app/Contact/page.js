@@ -9,24 +9,8 @@ export default function Contact() {
   // lang switch:
   const { englishVersion } = useContext(AppContext);
   // Email JS functionality:
-  const sendEmail = (e) => {
-    e.preventDefault();
 
-    send(
-      process.env.NEXT_PUBLIC_SERVICE_ID,
-      process.env.NEXT_PUBLIC_TEMPLATE_ID,
-      { senderName, senderEmail, msg },
-      process.env.NEXT_PUBLIC_PUBLIC_KEY
-    ).then(
-      (result) => {
-        console.log(result.text);
-      },
-      (error) => {
-        console.log(error.text);
-      }
-    );
-  };
-  // Handling the user msg:
+  // Handling the user input:
   const [senderName, setSenderName] = useState("");
   const [senderEmail, setSenderEmail] = useState("");
   const [msg, setMsg] = useState("");
@@ -40,6 +24,27 @@ export default function Contact() {
   };
   const handleMsg = (e) => {
     setMsg(e.target.value);
+  };
+
+  // Sending mail via EmailJS:
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    send(
+      process.env.NEXT_PUBLIC_SERVICE_ID,
+      process.env.NEXT_PUBLIC_TEMPLATE_ID,
+      { senderName, senderEmail, msg },
+      process.env.NEXT_PUBLIC_PUBLIC_KEY
+    ).then(
+      (result) => {
+        console.log(result.text);
+        alert("Your message has been sent!");
+      },
+      (error) => {
+        console.log(error.text);
+        alert("Sending error");
+      }
+    );
   };
 
   return (
@@ -64,27 +69,50 @@ export default function Contact() {
             width="450"
             height="300"
             className="object-contain my-3"
+            priority={true}
           />
         </div>
 
-        <form className="w-[30%] ipadAir:w-full ipadAir:px-5 flex flex-col items-center [&>label]:w-full [&>label]:font-secondary [&>input]:w-full [&>input]:bg-backgroundColor/25 [&>input]:rounded-md [&>input]:p-2 [&>input]:mb-4 [&>input]:font-secondary">
-          <label for="userName">{englishVersion ? "Name:" : "Navn:"}</label>
-          <input type="text" name="userName" required></input>
-
-          <label for="userEmail" required>
-            E-mail:
+        <form
+          className="w-[30%] ipadAir:w-full ipadAir:px-5 flex flex-col items-center [&>label]:w-full [&>label]:font-secondary [&>input]:w-full [&>input]:bg-backgroundColor/25 [&>input]:rounded-md [&>input]:p-2 [&>input]:mb-4 [&>input]:font-secondary"
+          onSubmit={sendEmail}
+        >
+          <label htmlFor="sender_name">
+            {englishVersion ? "Name:" : "Navn:"}
           </label>
-          <input type="email" name="userEmail"></input>
+          <input
+            type="text"
+            name="sender_name"
+            required
+            value={senderName}
+            onChange={handleSenderName}
+          ></input>
 
-          <label for="subject">{englishVersion ? "Subject" : "Emne:"}</label>
+          <label htmlFor="sender_email">E-mail:</label>
+          <input
+            type="email"
+            name="sender_email"
+            required
+            value={senderEmail}
+            onChange={handleSenderEmail}
+          ></input>
+
+          <label htmlFor="subject">
+            {englishVersion ? "Subject" : "Emne:"}
+          </label>
           <input type="text" name="subject"></input>
 
-          <label for="message">{englishVersion ? "Message:" : "Besked:"}</label>
+          <label htmlFor="message">
+            {englishVersion ? "Message:" : "Besked:"}
+          </label>
           <textarea
             name="message"
             className="bg-backgroundColor/25 rounded-md p-2 font-secondary w-full"
             rows="17"
             cols="10"
+            required
+            value={msg}
+            onChange={handleMsg}
           ></textarea>
           <button className="m-5 font-secondary border-solid border-backgroundColor border-2 rounded-md p-5 w-1/4">
             Send

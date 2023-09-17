@@ -115,7 +115,7 @@ export default function Contact() {
             value={msg}
             onChange={handleMsg}
           ></textarea>
-          <button className="m-5 font-secondary border-solid border-backgroundColor border-2 rounded-md p-5 w-1/4">
+          <button className="m-5 font-secondary border-solid border-backgroundColor border-2 rounded-md p-5">
             Send
           </button>
         </form>

@@ -6,9 +6,6 @@ import { AppContext } from "../layout";
 import { send } from "@emailjs/browser";
 
 export default function Contact() {
-  useEffect(() => {
-    console.log(process.env.NEXT_PUBLIC_PUBLIC_KEY);
-  }, []);
   // lang switch:
   const { englishVersion } = useContext(AppContext);
   // Email JS functionality:
@@ -33,23 +30,23 @@ export default function Contact() {
   const sendEmail = (e) => {
     e.preventDefault();
     console.log(process.env.NEXT_PUBLIC_PUBLIC_KEY);
-    // e.preventDefault();
+    e.preventDefault();
 
-    // send(
-    //   process.env.NEXT_PUBLIC_SERVICE_ID,
-    //   process.env.NEXT_PUBLIC_TEMPLATE_ID,
-    //   { senderName, senderEmail, msg },
-    //   process.env.NEXT_PUBLIC_PUBLIC_KEY
-    // ).then(
-    //   (result) => {
-    //     console.log(result.text);
-    //     alert("Your message has been sent!");
-    //   },
-    //   (error) => {
-    //     console.log(error.text);
-    //     alert("Sending error");
-    //   }
-    // );
+    send(
+      process.env.NEXT_PUBLIC_SERVICE_ID,
+      process.env.NEXT_PUBLIC_TEMPLATE_ID,
+      { senderName, senderEmail, msg },
+      process.env.NEXT_PUBLIC_PUBLIC_KEY
+    ).then(
+      (result) => {
+        console.log(result.text);
+        alert("Your message has been sent!");
+      },
+      (error) => {
+        console.log(error.text);
+        alert("Sending error");
+      }
+    );
   };
 
   return (

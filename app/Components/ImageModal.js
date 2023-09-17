@@ -83,13 +83,19 @@ export default function ImageModal({
           ></iframe>
         ) : (
           <Image
-            className={`object-contain transition-opacity  ${
-              imageLoaded ? "opacity-100" : "opacity-90"
-            }`}
+            className={`object-contain transition-opacity opacity-0 duration-500`}
+            // onLoadingComplete={(e) => {
+            //   e.classList.add("opacity-100");
+            // }}
+            onLoad={(e) => {
+              e.target.classList.add("opacity-100");
+            }}
             src={modalImageGallery[currentImgIdx]?.imageUrl}
             alt="alt"
-            loading="lazy"
+            loading="eager"
             fill={true}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            quality={100}
           />
         )}
       </div>

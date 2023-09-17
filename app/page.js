@@ -28,7 +28,7 @@ export default function Home() {
         setModalOpen={setImageModalOpen}
         setImgIdx={setImgIdx}
         galleryImages={galleryImages}
-        limit={6}
+        limit={4}
         setModalImageGallery={setModalImageGallery}
       />
       <div className="w-full bg-white p-5 flex justify-center font-secondary text-xl">

@@ -33,8 +33,12 @@ export default function Portofolios({}) {
                     setImageModalOpen(true);
                     setModalImageGallery(galleryImages);
                   }}
-                  className="object-cover cursor-pointer md:object-cover inline-block h-auto max-w-[100%]
-                 "
+                  className={`object-cover cursor-pointer md:object-cover inline-block h-auto max-w-[100%] opacity-0 transition-opacity duration-[${
+                    idx * 300
+                  }ms]`}
+                  onLoadingComplete={(e) => {
+                    e.classList.add("opacity-100");
+                  }}
                   src={item.imageUrl}
                   alt={item.alt}
                   loading="lazy"

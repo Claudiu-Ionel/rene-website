@@ -99,9 +99,6 @@ export const galleryImages = [
   { imageUrl: "/002.jpg", alt: "Image of Rene" },
   { imageUrl: "/003.jpg", alt: "Image of Rene" },
   { imageUrl: "/004.jpg", alt: "Image of Rene" },
-  { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
-  { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
-  { imageUrl: "/Julius.jpg", alt: "Image of Rene" },
 ];
 export const videos = [
   {

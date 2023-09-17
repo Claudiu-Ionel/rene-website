@@ -29,7 +29,6 @@ export default function Contact() {
   // Sending mail via EmailJS:
   const sendEmail = (e) => {
     e.preventDefault();
-    console.log(process.env.NEXT_PUBLIC_PUBLIC_KEY);
     e.preventDefault();
 
     send(

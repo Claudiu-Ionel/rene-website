@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import "./imageModal.css";
+import useMediaQuery from "../utils/useMediaQueries";
 export default function ImageModal({
   imageIdx,
   setImageModalOpen,
@@ -11,33 +12,22 @@ export default function ImageModal({
   videoMode,
 }) {
   const [opacities, setOpacities] = useState([]);
+  const [positions, setPositions] = useState([]);
   const [currentImgIdx, setCurrentImgIdx] = useState(imageIdx);
-  const [currentSlide, setCurrentSlide] = useState(imageIdx);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
 
   const [sliderRef, instanceRef] = useKeenSlider({
     slides: modalImageGallery.length,
     loop: true,
-    dragSpeed: 4,
-    rubberband: false,
+    dragSpeed: 1,
+    initial: 3,
     breakpoints: {
       "(max-width: 820px)": {
         drag: true,
-        slideChanged(slider) {
-          setCurrentSlide(slider.track.details.rel);
-        },
-        detailsChanged(s) {
-          const new_opacities = s.track.details.slides.map(
-            (slide) => slide.portion
-          );
-          setOpacities(new_opacities);
-        },
       },
-      "(min-width: 820px)": {
+      "(min-width: 821px)": {
         drag: false,
-        slideChanged(slider) {
-          setCurrentSlide(slider.track.details.rel);
-        },
         detailsChanged(s) {
           const new_opacities = s.track.details.slides.map(
             (slide) => slide.portion
@@ -50,7 +40,7 @@ export default function ImageModal({
       setLoaded(true);
     },
   });
-
+  console.log(instanceRef);
   const [fadeIn, setFadeIn] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const iframeRef = useRef(null);
@@ -117,11 +107,11 @@ export default function ImageModal({
         >{`>`}</button>
       </div>
       <div
-        className={`carusel w-[100%] ${
+        className={`w-[100%] ${
           videoMode ? "max-w-[90%]" : "max-w-[700px]"
         } h-[90%] max-h-[90%] relative flex items-center justify-center overflow-hidden  `}
       >
-        {videoMode ? (
+        {videoMode && (
           <iframe
             ref={iframeRef}
             className="w-[90%] h-[100%] md:w-full md:h-[400px] sm:h-[85%]"
@@ -130,28 +120,40 @@ export default function ImageModal({
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; autoplay"
             allowFullScreen
           ></iframe>
-        ) : (
-          <div ref={sliderRef} className="fader">
-            {modalImageGallery.map((img, idx) => (
-              <div
-                key={idx}
-                className="fader__slide"
-                style={{ opacity: opacities[idx] }}
-              >
-                <Image
-                  className={`object-contain bg-transparent absolute keen-slider__slide${idx}`}
-                  // onLoadingComplete={(e) => {
-                  //   e.classList.add("opacity-100");
-                  // }}
+        )}
 
-                  src={img.imageUrl}
-                  alt="alt"
-                  loading="eager"
-                  fill={true}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  quality={100}
-                />
-              </div>
+        {!videoMode && !useMediaQuery(820) && (
+          <div ref={sliderRef} className={`h-[90%] w-[90%] fader relative`}>
+            {modalImageGallery.map((img, idx) => (
+              <Image
+                key={idx}
+                className={`relative object-contain bg-transparent  md:object-cover fader__slide`}
+                style={{ opacity: opacities[idx] }}
+                src={img.imageUrl}
+                alt="alt"
+                loading="eager"
+                fill={true}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                quality={100}
+              ></Image>
+            ))}
+          </div>
+        )}
+        {!videoMode && useMediaQuery(820) && (
+          <div ref={sliderRef} className="keen-slider w-[90%] h-[90%]">
+            {modalImageGallery.map((img, idx) => (
+              <Image
+                key={idx}
+                className={`relative object-contain bg-transparent  md:object-cover keen-slider__slide`}
+                style={{ opacity: opacities[idx] }}
+                src={img.imageUrl}
+                alt="alt"
+                loading="eager"
+                width={100}
+                height={100}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                quality={100}
+              ></Image>
             ))}
           </div>
         )}

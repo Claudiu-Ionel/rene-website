@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 export default function Gallery({
   setModalOpen,
   setImgIdx,
@@ -10,6 +12,11 @@ export default function Gallery({
     setImgIdx(imgIdx);
     setModalOpen(true);
   }
+  const transitionDelay = 600;
+  const [opacity, setOpacity] = useState(false);
+  useEffect(() => {
+    setModalImageGallery(galleryImages);
+  }, []);
   return (
     <section
       id="gallery-section"
@@ -27,8 +34,8 @@ export default function Gallery({
                   setModalOpen(true);
                   setModalImageGallery(galleryImages);
                 }}
-                className={`object-cover cursor-pointer md:object-cover inline-block h-auto max-w-[100%] opacity-0 transition-opacity duration-[${
-                  idx * 300
+                className={`object-cover cursor-pointer md:object-cover inline-block h-auto max-w-[100%] opacity-0 duration-700 delay-[${
+                  idx * 600
                 }ms]`}
                 onLoadingComplete={(e) => {
                   e.classList.add("opacity-100");

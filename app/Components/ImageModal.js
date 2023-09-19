@@ -21,7 +21,7 @@ export default function ImageModal({
     slides: modalImageGallery.length,
     loop: true,
     dragSpeed: 1,
-    initial: 3,
+    initial: imageIdx,
     breakpoints: {
       "(max-width: 820px)": {
         drag: true,
@@ -144,7 +144,7 @@ export default function ImageModal({
             {modalImageGallery.map((img, idx) => (
               <Image
                 key={idx}
-                className={`relative object-contain bg-transparent  md:object-cover keen-slider__slide`}
+                className={`relative object-contain bg-transparent keen-slider__slide`}
                 style={{ opacity: opacities[idx] }}
                 src={img.imageUrl}
                 alt="alt"

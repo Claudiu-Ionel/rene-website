@@ -16,7 +16,7 @@ export default function ImageModal({
   const [currentImgIdx, setCurrentImgIdx] = useState(imageIdx);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
-
+  const breakpoint = useMediaQuery(820);
   const [sliderRef, instanceRef] = useKeenSlider({
     slides: modalImageGallery.length,
     loop: true,
@@ -122,7 +122,7 @@ export default function ImageModal({
           ></iframe>
         )}
 
-        {!videoMode && !useMediaQuery(820) && (
+        {!videoMode && !breakpoint && (
           <div ref={sliderRef} className={`h-[90%] w-[90%] fader relative`}>
             {modalImageGallery.map((img, idx) => (
               <Image
@@ -139,7 +139,7 @@ export default function ImageModal({
             ))}
           </div>
         )}
-        {!videoMode && useMediaQuery(820) && (
+        {!videoMode && breakpoint && (
           <div ref={sliderRef} className="keen-slider w-[90%] h-[90%]">
             {modalImageGallery.map((img, idx) => (
               <Image

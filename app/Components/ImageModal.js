@@ -1,17 +1,60 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
-
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+import "./imageModal.css";
 export default function ImageModal({
   imageIdx,
   setImageModalOpen,
   modalImageGallery,
   videoMode,
 }) {
-  const [fadeIn, setFadeIn] = useState(false);
+  const [opacities, setOpacities] = useState([]);
   const [currentImgIdx, setCurrentImgIdx] = useState(imageIdx);
+  const [currentSlide, setCurrentSlide] = useState(imageIdx);
+  const [loaded, setLoaded] = useState(false);
+
+  const [sliderRef, instanceRef] = useKeenSlider({
+    slides: modalImageGallery.length,
+    loop: true,
+    dragSpeed: 4,
+    rubberband: false,
+    breakpoints: {
+      "(max-width: 820px)": {
+        drag: true,
+        slideChanged(slider) {
+          setCurrentSlide(slider.track.details.rel);
+        },
+        detailsChanged(s) {
+          const new_opacities = s.track.details.slides.map(
+            (slide) => slide.portion
+          );
+          setOpacities(new_opacities);
+        },
+      },
+      "(min-width: 820px)": {
+        drag: false,
+        slideChanged(slider) {
+          setCurrentSlide(slider.track.details.rel);
+        },
+        detailsChanged(s) {
+          const new_opacities = s.track.details.slides.map(
+            (slide) => slide.portion
+          );
+          setOpacities(new_opacities);
+        },
+      },
+    },
+    created() {
+      setLoaded(true);
+    },
+  });
+
+  const [fadeIn, setFadeIn] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const iframeRef = useRef(null);
+
   function nextImage(idx) {
     setImageLoaded(false);
     if (idx >= modalImageGallery.length - 1) {
@@ -60,17 +103,23 @@ export default function ImageModal({
       <div className="slider-navigation absolute z-[0] top-1/2 transform -translate-y-1/2 w-full h-[50%] flex items-center justify-between ">
         <button
           className="text-white p-5 text-3xl md:hidden"
-          onClick={() => prevImage(currentImgIdx)}
+          onClick={(e) => {
+            videoMode ? prevImage(currentImgIdx) : "";
+            e.stopPropagation() || instanceRef.current?.prev();
+          }}
         >{`<`}</button>
         <button
           className="text-white p-5 text-3xl md:hidden"
-          onClick={() => nextImage(currentImgIdx)}
+          onClick={(e) => {
+            videoMode ? nextImage(currentImgIdx) : "";
+            e.stopPropagation() || instanceRef.current?.next();
+          }}
         >{`>`}</button>
       </div>
       <div
         className={`carusel w-[100%] ${
           videoMode ? "max-w-[90%]" : "max-w-[700px]"
-        } h-[90%] max-h-[90%] relative flex items-center justify-center `}
+        } h-[90%] max-h-[90%] relative flex items-center justify-center overflow-hidden  `}
       >
         {videoMode ? (
           <iframe
@@ -82,21 +131,29 @@ export default function ImageModal({
             allowFullScreen
           ></iframe>
         ) : (
-          <Image
-            className={`object-contain transition-opacity opacity-0 duration-500`}
-            // onLoadingComplete={(e) => {
-            //   e.classList.add("opacity-100");
-            // }}
-            onLoad={(e) => {
-              e.target.classList.add("opacity-100");
-            }}
-            src={modalImageGallery[currentImgIdx]?.imageUrl}
-            alt="alt"
-            loading="eager"
-            fill={true}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            quality={100}
-          />
+          <div ref={sliderRef} className="fader">
+            {modalImageGallery.map((img, idx) => (
+              <div
+                key={idx}
+                className="fader__slide"
+                style={{ opacity: opacities[idx] }}
+              >
+                <Image
+                  className={`object-contain bg-transparent absolute keen-slider__slide${idx}`}
+                  // onLoadingComplete={(e) => {
+                  //   e.classList.add("opacity-100");
+                  // }}
+
+                  src={img.imageUrl}
+                  alt="alt"
+                  loading="eager"
+                  fill={true}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  quality={100}
+                />
+              </div>
+            ))}
+          </div>
         )}
       </div>
     </div>

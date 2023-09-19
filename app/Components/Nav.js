@@ -68,23 +68,26 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
         } space-y-5`}
         >
           <li>
-            <Link href="/">Home</Link>
+            <Link onClick={() => setSidebarOpen(false)} href="/">
+              Home
+            </Link>
           </li>
           <li>
-            <Link href="/PageCV">
+            <Link onClick={() => setSidebarOpen(false)} href="/PageCV">
               {englishVersion ? "CV and Info" : "CV og Info"}
             </Link>
           </li>
           <li>
             <details
               onClick={() => {
+                setSidebarOpen(false);
                 setDetailsOpen(!detailsOpen);
               }}
               className="cursor-pointer"
               open={detailsOpen}
             >
               <summary>{englishVersion ? "Gallery" : "Galleri"}</summary>
-              <div className="flex flex-col space-y-2 absolute left-[22%] top-[12%] box-shadow">
+              <div className="flex flex-col space-y-2 absolute left-[30%] top-[13%] box-shadow">
                 <Link
                   onClick={(e) => setSidebarOpen(false)}
                   href="/Portofolios"
@@ -99,10 +102,17 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
           </li>
 
           <li>
-            <Link href="/Showreel">Showreel</Link>
+            <Link onClick={() => setSidebarOpen(false)} href="/Showreel">
+              Showreel
+            </Link>
           </li>
           <li>
-            <button onClick={() => setEnglishVersion(!englishVersion)}>
+            <button
+              onClick={() => {
+                setSidebarOpen(false);
+                setEnglishVersion(!englishVersion);
+              }}
+            >
               {!englishVersion ? "English" : "Dansk"}
             </button>
           </li>

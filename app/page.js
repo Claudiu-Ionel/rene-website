@@ -31,7 +31,7 @@ export default function Home() {
         limit={4}
         setModalImageGallery={setModalImageGallery}
       />
-      <div className="w-full bg-white p-5 flex justify-center font-secondary text-xl">
+      <div className="w-full bg-white p-5 flex justify-center font-secondary text-xl lg:text-lg">
         <div className="w-1/3 ipadAir:w-full ipadAir:p-1 font-secondary [&>div]:w-full text-justify">
           <div
             className={

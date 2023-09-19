@@ -16,7 +16,7 @@ export default function Experience() {
 
       {/* Autobiography text section: */}
 
-      <section className="w-[60%] lg:w-[90%] mb-10 font-secondary text-xl text-justify">
+      <section className="w-[60%] lg:w-full mb-10 font-secondary text-xl lg:text-lg text-justify">
         <div className={"[&>p]:mb-4" + (englishVersion ? " block" : " hidden")}>
           <p>
             Julius René is an actor with extensive experience in advertising,

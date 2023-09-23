@@ -1,11 +1,11 @@
-import { experienceTimeline } from "../data/data";
+import { experienceTimelineData } from "../data/data";
 
 export default function ExperienceTimeline() {
   return (
     <article className="w-full bg-white flex flex-col items-center">
       <h2 className="font-primary text-3xl my-10">Experience</h2>
-      <section className="w-1/3">
-        {experienceTimeline.map(({ year, projects }) => (
+      <section className="w-[60%] ipadAir:w-full">
+        {experienceTimelineData.map(({ year, projects }) => (
           // eslint-disable-next-line react/jsx-key
           <div className="w-full flex mb-10">
             <h3 className="text-2xl w-[20%]">{year}</h3>

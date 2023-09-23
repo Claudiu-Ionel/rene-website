@@ -1,11 +1,17 @@
 "use client";
 import { useState, useContext } from "react";
+
+// Components:
 import Gallery from "./Components/Gallery";
 import ImageModal from "./Components/ImageModal";
+import ExperienceTimeline from "./Components/ExperienceTimeline";
+
+// Data:
 import { galleryImages } from "./data/data";
 
 // Context:
 import { AppContext } from "./layout";
+
 export default function Home() {
   // Images:
   const [imageModalOpen, setImageModalOpen] = useState(false);
@@ -31,8 +37,8 @@ export default function Home() {
         limit={4}
         setModalImageGallery={setModalImageGallery}
       />
-      <div className="w-full bg-white p-5 flex justify-center font-secondary text-xl lg:text-lg">
-        <div className="w-1/3 ipadAir:w-full ipadAir:p-1 font-secondary [&>div]:w-full text-justify">
+      <div className="w-full bg-white p-5 flex flex-col justify-center items-center font-secondary text-xl lg:text-lg">
+        <div className="w-[80%] ipadAir:w-full ipadAir:p-1 font-secondary [&>div]:w-full text-justify">
           <div
             className={
               "[&>p]:mb-2 font-secondary" +
@@ -70,6 +76,7 @@ export default function Home() {
             </p>
           </div>
         </div>
+        <ExperienceTimeline />
       </div>
     </>
   );

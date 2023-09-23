@@ -1,4 +1,4 @@
-export const experienceTimeline = [
+export const experienceTimelineData = [
   {
     year: "2022",
     projects: [

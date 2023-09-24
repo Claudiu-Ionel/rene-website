@@ -1,9 +1,17 @@
+// Data:
 import { experienceTimelineData } from "../data/data";
 
+// Language context:
+import { useContext } from "react";
+import { AppContext } from "../layout";
+
 export default function ExperienceTimeline() {
+  const { englishVersion } = useContext(AppContext);
   return (
     <article className="w-full bg-white flex flex-col items-center">
-      <h2 className="font-primary text-3xl my-10">Experience</h2>
+      <h2 className="font-primary text-3xl my-10">
+        {!englishVersion ? "Erfaring" : "Experience"}
+      </h2>
       <section className="w-[60%] ipadAir:w-full">
         {experienceTimelineData.map(({ year, projects }) => (
           // eslint-disable-next-line react/jsx-key

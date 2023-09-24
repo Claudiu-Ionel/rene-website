@@ -1,9 +1,11 @@
 "use client";
 
+// Language context:
 import { useContext } from "react";
-
-import { experienceTimeline } from "../data/data";
 import { AppContext } from "../layout";
+
+// Data:
+import { experienceTimelineData } from "../data/data";
 
 export default function Experience() {
   const { englishVersion } = useContext(AppContext);
@@ -73,7 +75,7 @@ export default function Experience() {
       {/* The projects timeline: */}
 
       {/* <section className="w-[60%] lg:w-[90%]">
-        {experienceTimeline.map(({ year, projects }, idx) => (
+        {experienceTimelineData.map(({ year, projects }, idx) => (
           <div key={idx} className="w-full flex mb-10 lg:flex-col">
             <h3 className="text-2xl w-[20%] font-secondary">{year}</h3>
             <div className="w-[80%] font-secondary text-xl">

@@ -82,11 +82,13 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
               onClick={() => {
                 setDetailsOpen(!detailsOpen);
               }}
-              className="cursor-pointer"
+              className="cursor-pointer relative"
               open={detailsOpen}
             >
-              <summary>{englishVersion ? "Gallery" : "Galleri"}</summary>
-              <div className="flex flex-col space-y-2 absolute left-[30%] top-[13%] box-shadow">
+              <summary className="relative">
+                {englishVersion ? "Gallery" : "Galleri"}
+              </summary>
+              <div className="flex flex-col space-y-2 absolute -right-[120px] -top-[10px] box-shadow">
                 <Link
                   onClick={(e) => {
                     setSidebarOpen(false);

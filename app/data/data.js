@@ -116,4 +116,9 @@ export const videos = [
       "https://www.youtube.com/embed/Ggy7tJvV64U?si=6AnYLkMVRXu7hBXw&amp;start=17?showinfo=0&iv_load_policy=3&modestbranding&controls=0",
     videoTitle: "Arla® ØKO ost, Vi har gjort vores",
   },
+  {
+    videoUrl:
+      "https://youtube.com/embed/TlYXgwc9AWQ?si=cmEIFYe8-k436GFY?showinfo=0&iv_load_policy=3&modestbranding&controls=0",
+    videoTitle: "Julius Rene Leo Showreel",
+  },
 ];

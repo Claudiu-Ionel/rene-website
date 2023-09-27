@@ -47,7 +47,7 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
     // nav bar for screens with (max-width: 768px)
     return (
       <nav
-        className={` flex justify-between px-10 font-secondary relative z-10 top-0  sm:px-6  `}
+        className={` flex justify-between px-10 font-secondary relative z-10 top-0  sm:px-6 h-[58px] `}
       >
         <div className="px-5 py-2 flex flex-col justify-center sm:px-0 sm:py-0">
           <h1 className="text-2xl font-primary md:text-xl sm:text-xl">

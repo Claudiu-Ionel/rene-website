@@ -20,12 +20,6 @@ export default function Home() {
 
   // Context:
   const { englishVersion } = useContext(AppContext);
-  const isMac =
-    typeof window !== "undefined"
-      ? navigator.platform.indexOf("Mac") === 0 ||
-        navigator.platform === "iPhone"
-      : false;
-  console.log(isMac);
   return (
     <>
       {imageModalOpen && (
@@ -36,9 +30,7 @@ export default function Home() {
         />
       )}
       <section
-        className={`bg-hero-image w-full h-[905px] bg-cover bg-no-repeat ${
-          isMac ? "" : "bg-fixed"
-        } bg-top md:h-[700px] md:bg-center sm:h-[550px]`}
+        className={`bg-hero-image w-full h-[905px] bg-cover bg-no-repeat bg-fixed bg-top md:h-[700px] md:bg-center sm:h-[550px] sm:bg-local`}
       ></section>
       <Gallery
         setModalOpen={setImageModalOpen}

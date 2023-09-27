@@ -80,7 +80,6 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
           <li>
             <details
               onClick={() => {
-                setSidebarOpen(false);
                 setDetailsOpen(!detailsOpen);
               }}
               className="cursor-pointer"
@@ -89,12 +88,19 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
               <summary>{englishVersion ? "Gallery" : "Galleri"}</summary>
               <div className="flex flex-col space-y-2 absolute left-[30%] top-[13%] box-shadow">
                 <Link
-                  onClick={(e) => setSidebarOpen(false)}
+                  onClick={(e) => {
+                    setSidebarOpen(false);
+                  }}
                   href="/Portofolios"
                 >
                   {englishVersion ? "Portfolios" : "Porteføljer"}
                 </Link>
-                <Link onClick={(e) => setSidebarOpen(false)} href="/Gallery">
+                <Link
+                  onClick={(e) => {
+                    setSidebarOpen(false);
+                  }}
+                  href="/Gallery"
+                >
                   {englishVersion ? "Headshots" : "Portrætfotos"}
                 </Link>
               </div>

@@ -95,7 +95,7 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
                   }}
                   href="/Portofolios"
                 >
-                  {englishVersion ? "Portfolios" : "Porteføljer"}
+                  {englishVersion ? "Portfolios" : "Portefølje"}
                 </Link>
                 <Link
                   onClick={(e) => {
@@ -231,7 +231,7 @@ export default function Nav({ setSidebarOpen, sidebarOpen }) {
                   href="/Portofolios"
                   className="hover:opacity-30 transition duration-200 mt-3"
                 >
-                  {englishVersion ? "Portfolios" : "Porteføljer"}
+                  {englishVersion ? "Portfolios" : "Portefølje"}
                 </Link>
                 <Link
                   onClick={(e) => setSidebarOpen(false)}

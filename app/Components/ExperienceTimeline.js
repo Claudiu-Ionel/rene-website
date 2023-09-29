@@ -13,8 +13,8 @@ export default function ExperienceTimeline() {
         {!englishVersion ? "Erfaring" : "Experience"}
       </h2>
       <section className="w-[60%] ipadAir:w-full">
-        {experienceTimelineData.map(({ year, projects }) => (
-          <div className="w-full flex mb-10 sm:flex-col">
+        {experienceTimelineData.map(({ year, projects }, idx) => (
+          <div key={idx} className="w-full flex mb-10 sm:flex-col">
             <h3 className="text-2xl w-[20%] md:text-lg">{year}</h3>
             <div className="w-[80%] md:text-base">
               {projects.map((project) => (

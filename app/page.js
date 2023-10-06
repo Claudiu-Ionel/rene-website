@@ -4,7 +4,6 @@ import { useState, useContext } from "react";
 // Components:
 import Gallery from "./Components/Gallery";
 import ImageModal from "./Components/ImageModal";
-import ExperienceTimeline from "./Components/ExperienceTimeline";
 
 // Data:
 import { galleryImages } from "./data/data";
@@ -40,7 +39,7 @@ export default function Home() {
         setModalImageGallery={setModalImageGallery}
       />
       <div className="w-full bg-white p-5 flex flex-col justify-center items-center font-secondary text-xl lg:text-lg">
-        <div className="w-[80%] ipadAir:w-full ipadAir:p-1 font-secondary [&>div]:w-full text-justify">
+        <div className="w-[80%] ipadAir:w-full ipadAir:p-1 font-secondary [&>div]:w-full text-justify fold:text-left">
           <div
             className={
               "[&>p]:mb-2 font-secondary" +
@@ -78,7 +77,6 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <ExperienceTimeline />
       </div>
     </>
   );

@@ -27,7 +27,7 @@ export default function Showreel() {
           <h3 className="text-sm mt-2 text-center font-semibold font-secondary">
             {englishVersion
               ? `Commercials I have been into..`
-              : "Reklamer jeg har været til.."}
+              : "Reklamer jeg medvirker i"}
           </h3>
         </div>
         <div className="videos w-full flex justify-start flex-wrap md:flex-col gap-x-2 gap-y-3 px-6 py-12 md:px-0 ">

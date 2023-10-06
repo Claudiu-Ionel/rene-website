@@ -5,7 +5,6 @@ import { useState, useContext } from "react";
 import Gallery from "./Components/Gallery";
 import ImageModal from "./Components/ImageModal";
 import ExperienceTimeline from "./Components/ExperienceTimeline";
-import Contact from "./Contact/page";
 
 // Data:
 import { galleryImages } from "./data/data";
@@ -80,7 +79,6 @@ export default function Home() {
           </div>
         </div>
         <ExperienceTimeline />
-        <Contact />
       </div>
     </>
   );

@@ -121,4 +121,9 @@ export const videos = [
       "https://youtube.com/embed/TlYXgwc9AWQ?si=cmEIFYe8-k436GFY?showinfo=0&iv_load_policy=3&modestbranding&controls=0",
     videoTitle: "Julius Rene Leo Showreel",
   },
+  {
+    videoUrl:
+      "https://www.youtube.com/embed/vX4hp2T0uFA?si=8ewaEIgrFUE5yv1j?showinfo=0&iv_load_policy=3&modestbranding&controls=0",
+    videoTitle: "Julius Rene Leo Showreel",
+  },
 ];

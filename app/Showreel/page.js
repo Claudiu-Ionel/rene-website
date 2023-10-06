@@ -30,19 +30,19 @@ export default function Showreel() {
               : "Reklamer jeg har været til.."}
           </h3>
         </div>
-        <div className="videos w-full flex justify-start md:flex-col gap-x-5 gap-y-6 px-6 py-12 md:px-0 ">
+        <div className="videos w-full flex justify-start flex-wrap md:flex-col gap-x-2 gap-y-3 px-6 py-12 md:px-0 ">
           {videos.map((item, idx) => {
             return (
               <div
                 key={idx}
-                className="w-[33%] max-w-[450px] h-[250px] md:w-full md:h-[400px] sm:h-[150px] relative"
+                className="w-[32%] max-w-[450px] h-[250px] md:w-full md:h-[400px] sm:h-[300px] fold:h-[150px] relative"
               >
                 <iframe
                   key={idx}
                   src={item.videoUrl}
                   title="YouTube video player"
                   controls={0}
-                  className="w-full h-[250px] md:w-full md:h-[400px] sm:h-[150px]"
+                  className="w-full h-[250px] md:w-full md:h-[400px] sm:h-[300px] fold:h-[150px]"
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope;"
                 ></iframe>
                 <div

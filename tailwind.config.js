@@ -8,7 +8,7 @@ module.exports = {
   ],
   theme: {
     colors: {
-      backgroundColor: "#9d9d9d",
+      backgroundColor: "rgb(194 194 194)",
       footerColor: "#3a3a3a",
       white: "#FFF",
       red: "#FF0000",
@@ -21,6 +21,7 @@ module.exports = {
       ipadAir: { max: "820px" },
       md: { max: "768px" },
       sm: { max: "639px" },
+      fold: { max: "280px" },
     },
 
     extend: {

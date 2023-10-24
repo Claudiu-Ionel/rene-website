@@ -15,6 +15,8 @@ module.exports = {
     },
     screens: {
       slider: { min: "820px" },
+      "3xl": { max: "3000px" },
+
       "2xl": { max: "1535px" },
       xl: { max: "1279px" },
       lg: { max: "1023px" },

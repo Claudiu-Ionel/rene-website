@@ -21,53 +21,63 @@ export default function Experience() {
       <section className="w-[60%] lg:w-full mb-10 font-secondary text-xl lg:text-lg text-justify sm:px-4">
         <div className={"[&>p]:mb-4" + (englishVersion ? " block" : " hidden")}>
           <p>
-            Julius René is an actor with extensive experience in advertising,
-            film productions and also several documentary film assignments in
-            Denmark. He has also appeared in worldwide series - Borgen 4.
+            Julius René is a skilled actor with an impressive background in
+            commercials, film productions and documentaries in Denmark. He has
+            also made his mark in worldwide series such as &quot;Borgen 4&quot;.
           </p>
           <p>
-            Julius René always has a very professional approach to his acting -
-            both in his performance on stage and on film. His disciplined but
-            also playful and creative approach to his tasks clearly shows his
-            dedication and passion for acting. He masters all genres - from
-            drama to comedy. He is trained in Meisner and Method acting.
+            Julius René always brings a highly professional approach to his
+            acting, whether on stage or in front of the camera. His approach is
+            characterized by discipline, creativity and playful elements that
+            testify to his deep commitment and passion for acting. He masters a
+            wide range of genres, from drama to comedy, and is well versed in
+            both Meisner and Method acting techniques.
           </p>
           <p>
-            He graduated from the Solistklassen Advanced Postgraduate degree
-            (PhD level) in bass trombone from The National Academy of Music and
-            throughout his career has played with the Aalborg Symphony
-            Orchestra, the Schleswig Musikkorps, the Prince&apos;s Musikkorps,
-            the Odense Symphony Orchestra, Dr Bigband and has also participated
-            in concerts in abroad. He has also worked with Mich Hedin Hansen
-            (CutFather) and also appears on records by the Danish rapper
-            Nikoline Nikoline and the Danish electropop group When Saints Go
-            Machine.
+            In addition to his acting career, Julius René has an impressive
+            musical background. He graduated from the Soloist class Advanced
+            Postgraduate degree (PhD level) in bass trombone from The National
+            Academy of Music. He has performed with renowned orchestras such as
+            the Aalborg Symphony Orchestra, the Schleswig Musikkorps, the
+            Prince&apos;s Musikkorps, the Odense Symphony Orchestra and Dr.
+            Bigband, and he has also participated in concerts abroad. In
+            addition, he has collaborated with prominent musicians such as Mich
+            Hedin Hansen (CutFather) and contributed to albums by the Danish
+            rapper Nikoline Nikoline and the Danish electropop group When Saints
+            Go Machine. Julius René is an artist with remarkable versatility and
+            impressive experience in both theatre, film and music.
           </p>
         </div>
         <div
           className={"[&>p]:mb-4" + (!englishVersion ? " block" : " hidden")}
         >
           <p>
-            Julius René er en skuespiller med stor erfaring inden for reklamer,
-            film-produktioner og også flere dokumentarfilm-opgaver i Danmark.
-            Han har også optrådt i verdensomspændende serier - fx Borgen 4.
+            Julius René er en dygtig skuespiller med en imponerende baggrund
+            inden for reklamer, filmproduktioner og dokumentarfilm i Danmark.
+            Han har også markeret sig i verdensomspændende serier som
+            &quot;Borgen 4&quot;.
           </p>
           <p>
-            Julius René har altid en meget professionel tilgang til sit skuespil
-            - både i sin optræden på scene og på film set. Hans disciplinerede
-            men også legende og kreative tilgang til sine opgaver viser tydeligt
-            hans dedikation og passion for skuespillet. Han mestrer alle genrer
-            - fra drama til comedy. Han er skolet i Meisner og Method acting.
+            Julius René bringer altid en yderst professionel tilgang til sit
+            skuespil, uanset om det er på scenen eller foran kameraet. Hans
+            tilgang er præget af disciplin, kreativitet og legende elementer,
+            der vidner om hans dybe engagement og lidenskab for skuespillet. Han
+            mestrer en bred vifte af genrer, fra drama til komedie, og han er
+            velbevandret i både Meisner og Method acting-teknikker.
           </p>
           <p>
-            Han er uddannet fra Solistklassen Advanced Postgraduate-grad
-            (PhD-niveau) i basbasun fra The National Academy of Music og har
-            gennem sin karriere spillet med Aalborg Symfoniorkester, Slesvigske
-            Musikkorps, Prinsens Musikkorps, Odense Symfoniorkester, Dr Bigband
-            og har tillige medvirket i koncerter i udlandet. Han har desuden
-            arbejdet med Mich Hedin Hansen (CutFather) og medvirker desuden på
-            plader af den danske rapper Nikoline Nikoline og den danske
-            elektropop gruppe When Saints Go Machine.
+            Ud over sin skuespilkarriere har Julius René en imponerende
+            musikalsk baggrund. Han er uddannet fra Solistklassen Advanced
+            Postgraduate-grad (PhD-niveau) i basbasun fra The National Academy
+            of Music. Han har optrådt med anerkendte orkestre som Aalborg
+            Symfoniorkester, Slesvigske Musikkorps, Prinsens Musikkorps, Odense
+            Symfoniorkester og Dr. Bigband, og han har også deltaget i koncerter
+            i udlandet. Derudover har han samarbejdet med prominente musikere
+            som Mich Hedin Hansen (CutFather) og bidraget til albummer af den
+            danske rapper Nikoline Nikoline og den danske elektropopgruppe When
+            Saints Go Machine. Julius René er en kunstner med en
+            bemærkelsesværdig alsidighed og imponerende erfaring inden for både
+            teater, film og musik.
           </p>
         </div>
       </section>

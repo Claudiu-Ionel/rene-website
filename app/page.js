@@ -39,7 +39,7 @@ export default function Home() {
         setModalImageGallery={setModalImageGallery}
       />
       <div className="w-full bg-white p-5 flex flex-col justify-center items-center font-secondary text-xl lg:text-lg">
-        <div className="w-[80%] ipadAir:w-full ipadAir:p-1 font-secondary [&>div]:w-full text-justify fold:text-left">
+        <div className="w-[80%] max-w-3xl ipadAir:w-full ipadAir:p-1 font-secondary [&>div]:w-full text-justify fold:text-left">
           <div
             className={
               "[&>p]:mb-2 font-secondary" +
@@ -47,33 +47,29 @@ export default function Home() {
             }
           >
             <p>
-              Jeg er en erfaren, multifaceted skuespiller og model, som er
-              beskæftiget i filmbranchen i mere end 8 år. Min autodidaktiske og
-              professionelle tilgang har bragt mig i utallige reklamer,
-              historiske dokumentarer, stills, dubbing og har banet vej til
-              større internationale produktioner som Borgen 4 og Gentleman Jack.
-            </p>
-            <p>
-              I min alsidige karriere, udover at være på set, komponerer jeg
-              musik og er freelance basunist uddannet fra solistklassen fra
-              konservatoriet.
+              Velkommen til mit virtuelle galleri, hvor jeg åbner døren til min
+              kunstneriske verden. Jeg er begejstret for at byde dig velkommen
+              til dette hjørne af kreativitet, hvor skuespil og musik smelter
+              sammen. I de følgende sider kan du læse dig til projekter, der har
+              formet min karriere og min kunstneriske identitet. På hjemmesiden
+              finder du mine billeder og showreels, der indfanger øjeblikke af
+              min kunstneriske verden, hvor ord ikke altid formår at formidle
+              alt. Jeg glæder mig til at dele denne kreative verden med dig.
+              Rigtig god fornøjelse!
             </p>
           </div>
           <div
             className={"[&>p]:mb-2" + (englishVersion ? " block" : " hidden")}
           >
             <p>
-              I am an experienced, multifaceted actor and model who has been in
-              the film industry for more than 8 years. My self-taught and
-              professional approach has brought me into countless commercials,
-              historical documentaries, stills, dubbing and has paved the way
-              for major international productions such as Borgen 4 and Gentleman
-              Jack.
-            </p>
-            <p>
-              In my versatile career, in addition to being on stage, I compose
-              music and am a freelance trombonist trained in the soloist class
-              from the conservatory.
+              Welcome to my virtual gallery, where I open the door to my
+              artistic world. I am thrilled to welcome you to this corner of
+              creativity where acting and music merge. In the following pages
+              you can read about projects that have shaped my career and my
+              artistic identity. On the website you will find my photos and
+              showreels that capture moments of my artistic world where words do
+              not always manage to convey everything. I look forward to sharing
+              this creative world with you. Enjoy!
             </p>
           </div>
         </div>

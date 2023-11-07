@@ -1,5 +1,6 @@
 "use client";
 import { useState, useContext } from "react";
+import Link from "next/link";
 
 // Components:
 import Gallery from "./Components/Gallery";
@@ -31,7 +32,7 @@ export default function Home() {
       <section
         className={`bg-hero-image w-full h-[905px] bg-cover bg-no-repeat bg-fixed bg-top md:h-[700px] md:bg-center sm:h-[550px] sm:bg-local relative`}
       >
-        <div className="3xl:flex xl:hidden lg:hidden w-[400px] max-w-3xl ipadAir:w-full ipadAir:p-1 font-secondary [&>div]:w-full text-justify fold:text-left absolute left-[7%] top-[50%] -translate-y-[50%] 2xl:left-10">
+        <div className="3xl:flex xl:hidden lg:hidden w-[400px] max-w-3xl ipadAir:w-full ipadAir:p-1 font-secondary [&>div]:w-full text-justify fold:text-left absolute left-[7%] top-[50%] -translate-y-[50%] 2xl:left-10 flex flex-col items-center">
           <div
             className={
               "[&>p]:mb-2 font-secondary" +
@@ -43,11 +44,13 @@ export default function Home() {
               kunstneriske verden. Jeg er begejstret for at byde dig velkommen
               til dette hjørne af kreativitet, hvor skuespil og musik smelter
               sammen. I de følgende sider kan du læse dig til projekter, der har
-              formet min karriere og min kunstneriske identitet. På hjemmesiden
-              finder du mine billeder og showreels, der indfanger øjeblikke af
-              min kunstneriske verden, hvor ord ikke altid formår at formidle
-              alt. Jeg glæder mig til at dele denne kreative verden med dig.
-              Rigtig god fornøjelse!
+              formet min karriere og min kunstneriske identitet.
+            </p>
+            <p>
+              På hjemmesiden finder du mine billeder og showreels, der indfanger
+              øjeblikke af min kunstneriske verden, hvor ord ikke altid formår
+              at formidle alt. Jeg glæder mig til at dele denne kreative verden
+              med dig. Rigtig god fornøjelse!
             </p>
           </div>
           <div
@@ -56,14 +59,22 @@ export default function Home() {
             <p>
               Welcome to my virtual gallery, where I open the door to my
               artistic world. I am thrilled to welcome you to this corner of
-              creativity where acting and music merge. In the following pages
-              you can read about projects that have shaped my career and my
-              artistic identity. On the website you will find my photos and
-              showreels that capture moments of my artistic world where words do
-              not always manage to convey everything. I look forward to sharing
-              this creative world with you. Enjoy!
+              creativity where acting and music merge.
+            </p>
+            <p>
+              In the following pages you can read about projects that have
+              shaped my career and my artistic identity. On the website you will
+              find my photos and showreels that capture moments of my artistic
+              world where words do not always manage to convey everything. I
+              look forward to sharing this creative world with you. Enjoy!
             </p>
           </div>
+          <Link
+            href="/PageCV"
+            className="uppercase border-[1px] border-solid border-footerColor rounded-lg p-2 mt-2"
+          >
+            <span>{englishVersion ? "Read more" : "Læs mere"}</span>
+          </Link>
         </div>
       </section>
       <Gallery
@@ -74,7 +85,7 @@ export default function Home() {
         setModalImageGallery={setModalImageGallery}
       />
       <div className="w-full bg-white p-5 flex flex-col justify-center items-center font-secondary text-xl lg:text-lg">
-        <div className="3xl:hidden xl:flex lg:flex fold:flex sm:flex md:flex ipadAir:flex w-[80%] max-w-3xl ipadAir:w-full ipadAir:p-1 font-secondary [&>div]:w-full text-justify fold:text-left">
+        <div className="3xl:hidden xl:flex lg:flex fold:flex sm:flex md:flex ipadAir:flex w-[80%] max-w-3xl ipadAir:w-full ipadAir:p-1 font-secondary [&>div]:w-full text-justify fold:text-left flex flex-col items-center">
           <div
             className={
               "[&>p]:mb-2 font-secondary" +
@@ -86,11 +97,13 @@ export default function Home() {
               kunstneriske verden. Jeg er begejstret for at byde dig velkommen
               til dette hjørne af kreativitet, hvor skuespil og musik smelter
               sammen. I de følgende sider kan du læse dig til projekter, der har
-              formet min karriere og min kunstneriske identitet. På hjemmesiden
-              finder du mine billeder og showreels, der indfanger øjeblikke af
-              min kunstneriske verden, hvor ord ikke altid formår at formidle
-              alt. Jeg glæder mig til at dele denne kreative verden med dig.
-              Rigtig god fornøjelse!
+              formet min karriere og min kunstneriske identitet.
+            </p>
+            <p>
+              På hjemmesiden finder du mine billeder og showreels, der indfanger
+              øjeblikke af min kunstneriske verden, hvor ord ikke altid formår
+              at formidle alt. Jeg glæder mig til at dele denne kreative verden
+              med dig. Rigtig god fornøjelse!
             </p>
           </div>
           <div
@@ -99,14 +112,22 @@ export default function Home() {
             <p>
               Welcome to my virtual gallery, where I open the door to my
               artistic world. I am thrilled to welcome you to this corner of
-              creativity where acting and music merge. In the following pages
-              you can read about projects that have shaped my career and my
-              artistic identity. On the website you will find my photos and
-              showreels that capture moments of my artistic world where words do
-              not always manage to convey everything. I look forward to sharing
-              this creative world with you. Enjoy!
+              creativity where acting and music merge.
+            </p>
+            <p>
+              In the following pages you can read about projects that have
+              shaped my career and my artistic identity. On the website you will
+              find my photos and showreels that capture moments of my artistic
+              world where words do not always manage to convey everything. I
+              look forward to sharing this creative world with you. Enjoy!
             </p>
           </div>
+          <Link
+            href="/PageCV"
+            className="uppercase border-[1px] border-solid border-footerColor rounded-lg p-2 mt-2"
+          >
+            <span>{englishVersion ? "Read more" : "Læs mere"}</span>
+          </Link>
         </div>
       </div>
     </>

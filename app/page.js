@@ -6,7 +6,7 @@ import Gallery from "./Components/Gallery";
 import ImageModal from "./Components/ImageModal";
 
 // Data:
-import { galleryImages } from "./data/data";
+import { homePageImages } from "./data/data";
 
 // Context:
 import { AppContext } from "./layout";
@@ -69,7 +69,7 @@ export default function Home() {
       <Gallery
         setModalOpen={setImageModalOpen}
         setImgIdx={setImgIdx}
-        galleryImages={galleryImages}
+        galleryImages={homePageImages}
         limit={4}
         setModalImageGallery={setModalImageGallery}
       />

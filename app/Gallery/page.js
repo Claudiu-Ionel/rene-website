@@ -1,5 +1,5 @@
 "use client";
-import { galleryImages } from "../data/data";
+import { portraitImages } from "../data/data";
 import Gallery from "../Components/Gallery";
 import ImageModal from "../Components/ImageModal";
 import { useState } from "react";
@@ -22,24 +22,24 @@ export default function GalleryPage() {
         <Gallery
           setModalOpen={setImageModalOpen}
           setImgIdx={setImgIdx}
-          galleryImages={galleryImages}
+          galleryImages={portraitImages}
+          limit={6}
+          setModalImageGallery={setModalImageGallery}
+        />
+        {/* <Gallery
+          setModalOpen={setImageModalOpen}
+          setImgIdx={setImgIdx}
+          galleryImages={portraitImages}
           limit={6}
           setModalImageGallery={setModalImageGallery}
         />
         <Gallery
           setModalOpen={setImageModalOpen}
           setImgIdx={setImgIdx}
-          galleryImages={galleryImages}
+          galleryImages={portraitImages}
           limit={6}
           setModalImageGallery={setModalImageGallery}
-        />
-        <Gallery
-          setModalOpen={setImageModalOpen}
-          setImgIdx={setImgIdx}
-          galleryImages={galleryImages}
-          limit={6}
-          setModalImageGallery={setModalImageGallery}
-        />
+        /> */}
       </div>
     </>
   );

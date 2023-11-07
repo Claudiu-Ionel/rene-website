@@ -2,10 +2,10 @@
 
 import Experience from "../Components/Experience";
 import ImageModal from "../Components/ImageModal";
-import { galleryImages } from "../data/data";
+import { portfolgeImages } from "../data/data";
 import { useState } from "react";
 import Gallery from "../Components/Gallery";
-export default function Portofolios({}) {
+export default function Portofolios({ }) {
   const [imageModalOpen, setImageModalOpen] = useState(false);
   const [imageIdx, setImgIdx] = useState(0);
   const [modalImageGallery, setModalImageGallery] = useState([]);
@@ -30,7 +30,7 @@ export default function Portofolios({}) {
       <Gallery
         setModalOpen={setImageModalOpen}
         setImgIdx={setImgIdx}
-        galleryImages={galleryImages}
+        galleryImages={portfolgeImages}
         limit={4}
         setModalImageGallery={setModalImageGallery}
       />

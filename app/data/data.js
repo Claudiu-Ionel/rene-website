@@ -100,6 +100,26 @@ export const galleryImages = [
   { imageUrl: "/003.jpg", alt: "Image of Rene" },
   { imageUrl: "/004.jpg", alt: "Image of Rene" },
 ];
+export const homePageImages = [
+  { imageUrl: "/Home/juliusreneleoactor.jpg", alt: "Image of Rene" },
+  { imageUrl: "/Home/juliusreneleoactor1.jpg", alt: "Image of Rene" },
+  { imageUrl: "/Home/juliusreneleoactor2.jpg", alt: "Image of Rene" },
+  { imageUrl: "/Home/juliusreneleoactor3.jpg", alt: "Image of Rene" },
+];
+export const portraitImages = [
+  { imageUrl: "/Portraits/juliusreneleoactor5.jpg", alt: "Image of Rene" },
+  { imageUrl: "/Portraits/juliusreneleoactor6.jpg", alt: "Image of Rene" },
+  { imageUrl: "/Portraits/juliusreneleoactor7.jpg", alt: "Image of Rene" },
+  { imageUrl: "/Portraits/juliusreneleoactor8.jpg", alt: "Image of Rene" },
+  { imageUrl: "/Portraits/juliusreneleoactor12.jpeg", alt: "Image of Rene" },
+];
+export const portfolgeImages = [
+  { imageUrl: "/Portfolios/juliusreneleoactor4.jpg", alt: "Image of Rene" },
+  { imageUrl: "/Portfolios/juliusreneleoactor9.jpg", alt: "Image of Rene" },
+  { imageUrl: "/Portfolios/juliusreneleoactor11.jpg", alt: "Image of Rene" },
+  { imageUrl: "/Portfolios/juliusreneleoactor13.jpg", alt: "Image of Rene" },
+];
+
 export const videos = [
   {
     videoUrl:

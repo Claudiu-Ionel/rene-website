@@ -5,7 +5,7 @@ import ImageModal from "../Components/ImageModal";
 import { portfolgeImages } from "../data/data";
 import { useState } from "react";
 import Gallery from "../Components/Gallery";
-export default function Portofolios({ }) {
+export default function Portofolios({}) {
   const [imageModalOpen, setImageModalOpen] = useState(false);
   const [imageIdx, setImgIdx] = useState(0);
   const [modalImageGallery, setModalImageGallery] = useState([]);
@@ -25,7 +25,11 @@ export default function Portofolios({ }) {
         />
       )}
       <div className="w-full bg-white px-8 py-6 h-[128px] ipadAir:hidden"></div>
-      <Experience></Experience>
+      <div className="bg-white w-full flex justify-center">
+        <div className="w-1/2 max-w-2xl lg:w-[95%]">
+          <Experience />
+        </div>
+      </div>
 
       <Gallery
         setModalOpen={setImageModalOpen}

@@ -35,7 +35,7 @@ export default function Portofolios({}) {
         setModalOpen={setImageModalOpen}
         setImgIdx={setImgIdx}
         galleryImages={portfolgeImages}
-        limit={4}
+        limit={6}
         setModalImageGallery={setModalImageGallery}
       />
     </>

@@ -114,6 +114,8 @@ export const portraitImages = [
   { imageUrl: "/Portraits/juliusreneleoactor12.jpeg", alt: "Image of Rene" },
 ];
 export const portfolgeImages = [
+  { imageUrl: "/Portfolios/image00001.jpg", alt: "Image of Rene" },
+  { imageUrl: "/Portfolios/image00002.jpg", alt: "Image of Rene" },
   { imageUrl: "/Portfolios/juliusreneleoactor4.jpg", alt: "Image of Rene" },
   { imageUrl: "/Portfolios/juliusreneleoactor9.jpg", alt: "Image of Rene" },
   { imageUrl: "/Portfolios/juliusreneleoactor11.jpg", alt: "Image of Rene" },

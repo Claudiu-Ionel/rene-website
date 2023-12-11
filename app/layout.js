@@ -16,6 +16,11 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <title>Julius René Leo: professional actor</title>
+      <meta name="keywords" content="actor, skuespiller" />
+      <meta name="description" content="Julius René Leo's personal webpage" />
+      <meta name="author" content="Julius René Leo" />
+
       <body
         className={`relative ${
           sidebarOpen ? "overflow-y-hidden" : "overflow-y-scroll"
